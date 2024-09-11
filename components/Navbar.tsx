@@ -7,34 +7,27 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-[#23707A] text-white py-5 px-[2%] ">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">
+    <nav className="bg-[#23707A] text-white p-5 md:px-[5%] lg:px-[10%] p">
+      <div className=" mx-auto flex md:justify-around justify-between items-center">
         <Image 
-            src="/public/Assets/Asset 11 1.svg " // Path to your SVG logo
+            src="/Assets/Asset 10 2.svg" 
             alt="Logo"
-            width={40}  // Set the width of the logo
-            height={40} // Set the height of the logo
+            width={190}  
+            height={80} 
           />
-           <Image 
-            src="/Assets/Asset 10 2.svg " // Path to your SVG logo
-            alt="Logo"
-            width={40}  // Set the width of the logo
-            height={40} // Set the height of the logo
-          />
-        </div>
         <div className="hidden md:flex items-center justify-center flex-grow ">
-          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center justify-around w-[90%]">
+          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center justify-between lg:w-[80%] md:w-fit space-x-2">
             <a href="#" className="hover:underline">Home</a>
             <a href="#" className="hover:underline">About</a>
             <a href="#" className="hover:underline">Contact</a>
+            <a href="#" className="hover:underline">Services</a>
             <a href="#" className="hover:underline">Services</a>
             <a href="#" className="hover:underline">Contact</a>
           </div>
         </div>
         <button className="bg-white text-[#1b4d4d] font-bold px-4 py-2 rounded-full hidden md:block">Contact Sales</button>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X /> : <Menu />}
+          {isMenuOpen ? <X className='w-10 h-10 '/> : <Menu className='w-10 h-10 ' />}
         </button>
       </div>
       {isMenuOpen && (
