@@ -7,11 +7,11 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-[#1b4d4d] text-white p-4">
+    <nav className="bg-[#1b4d4d] text-white py-5 px-[5%] ">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">Doodle Digital</div>
         <div className="hidden md:flex items-center justify-center flex-grow">
-          <div className="bg-[#143939] rounded-full px-6 py-2 flex items-center space-x-4">
+          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center space-x-4">
             <a href="#" className="hover:underline">Home</a>
             <a href="#" className="hover:underline">About</a>
             <a href="#" className="hover:underline">Services</a>
