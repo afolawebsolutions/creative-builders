@@ -7,18 +7,19 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-[#1b4d4d] text-white py-5 px-[5%] ">
+    <nav className="bg-[#23707A] text-white py-5 px-[5%] ">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">Doodle Digital</div>
-        <div className="hidden md:flex items-center justify-center flex-grow">
-          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center space-x-4">
+        <div className="hidden md:flex items-center justify-center flex-grow ">
+          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center justify-around w-[90%]">
             <a href="#" className="hover:underline">Home</a>
             <a href="#" className="hover:underline">About</a>
+            <a href="#" className="hover:underline">Contact</a>
             <a href="#" className="hover:underline">Services</a>
             <a href="#" className="hover:underline">Contact</a>
           </div>
         </div>
-        <button className="bg-white text-[#1b4d4d] px-4 py-2 rounded-full hidden md:block">Sign Up</button>
+        <button className="bg-white text-[#1b4d4d] px-4 py-2 rounded-full hidden md:block">Contact Sales</button>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X /> : <Menu />}
         </button>

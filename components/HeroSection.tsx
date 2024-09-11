@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#1b4d4d] text-white p-8 md:p-16 flex flex-col md:flex-row items-center">
+    <section className="bg-[#23707A] text-white p-8 md:p-16 flex flex-col md:flex-row items-center">
       <div className="md:w-1/2">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Your vision</h1>
         <h2 className="text-2xl md:text-4xl mb-4">we design,</h2>
