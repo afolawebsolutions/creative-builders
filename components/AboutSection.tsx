@@ -38,7 +38,7 @@ export default function AboutSection() {
         </p>
         <div className='flex justify-center md:justify-start'>
         <button className={`${poppins.className} bg-[#00A85A] flex  text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
-          Know more
+          Our Services
         </button>
         </div>
       </div>
