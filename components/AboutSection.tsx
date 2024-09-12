@@ -11,16 +11,16 @@ const firaCode = Fira_Code({
   weight: ['400', '700'],
 });
 
-export default function HeroSection() {
+export default function AboutSection() {
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+    <section className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]">
       <div className="md:w-1/2 mb-8 md:mb-0">
         <Image 
           src="/Assets/image 3.png" 
           alt="Person with raised arm" 
           width={600} 
           height={600}
-          className="w-full h-auto"
+          className="w-full min-h-[400px] "
         />
       </div>
       <div className="md:w-1/2 md:pl-12">
@@ -36,9 +36,11 @@ export default function HeroSection() {
         <p className={`${poppins.className} text-[#000000] mb-8 leading-relaxed`} style={{ fontSize: 'clamp(1rem, 2vw, 15px)' }}>
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
-        <button className={`${poppins.className} bg-[#00A85A] text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
+        <div className='flex  justify-center'>
+        <button className={`${poppins.className} bg-[#00A85A] flex  text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
           Our Services
         </button>
+        </div>
       </div>
     </section>
   );
