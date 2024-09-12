@@ -12,8 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        archivo: ['Archivo Black', 'sans-serif'],
+        cascadia: ['Cascadia Code', 'monospace'],
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

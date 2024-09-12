@@ -7,25 +7,24 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-[#23707A] text-white p-5 md:px-[5%] lg:px-[10%] p">
+    <nav className="bg-[#23707A] text-white p-8 md:px-[5%]">
       <div className=" mx-auto flex md:justify-around justify-between items-center">
         <Image 
             src="/Assets/Asset 10 2.svg" 
             alt="Logo"
-            width={190}  
-            height={80} 
+            width={210}  
+            height={100} 
           />
         <div className="hidden md:flex items-center justify-center flex-grow ">
-          <div className="bg-[#11AE60] rounded-full px-6 py-2 flex items-center justify-between lg:w-[80%] md:w-fit space-x-2">
-            <a href="#" className="hover:underline">Home</a>
-            <a href="#" className="hover:underline">About</a>
-            <a href="#" className="hover:underline">Contact</a>
-            <a href="#" className="hover:underline">Services</a>
-            <a href="#" className="hover:underline">Services</a>
-            <a href="#" className="hover:underline">Contact</a>
+          <div className="bg-[#11ae6070] rounded-full px-6 py-4 flex items-center justify-between lg:w-[80%] md:w-fit space-x-2">
+            <a href="#" className="hover:underline text-[18px] ">Home</a>
+            <a href="#" className="hover:underline text-[18px]">About</a>
+            <a href="#" className="hover:underline text-[18px]">Contact</a>
+            <a href="#" className="hover:underline text-[18px]">Services</a>
+            <a href="#" className="hover:underline text-[18px]">Contact</a>
           </div>
         </div>
-        <button className="bg-white text-[#1b4d4d] font-bold px-4 py-2 rounded-full hidden md:block">Contact Sales</button>
+        <button className="bg-white text-gray-950 text-[20px] px-4 py-4 rounded-full hidden md:block">Contact Sales</button>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X className='w-10 h-10 '/> : <Menu className='w-10 h-10 ' />}
         </button>

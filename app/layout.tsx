@@ -13,6 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&family=Cascadia+Code:wght@400&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         {children}
       </body>
