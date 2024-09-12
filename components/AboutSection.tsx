@@ -18,8 +18,8 @@ export default function AboutSection() {
         <Image 
           src="/Assets/image 3.png" 
           alt="Person with raised arm" 
-          width={600} 
-          height={600}
+          width={500} 
+          height={500}
           className="w-full min-h-[400px] "
         />
       </div>
@@ -36,9 +36,9 @@ export default function AboutSection() {
         <p className={`${poppins.className} text-[#000000] mb-8 leading-relaxed`} style={{ fontSize: 'clamp(1rem, 2vw, 15px)' }}>
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
-        <div className='flex  justify-center'>
+        <div className='flex justify-center md:justify-start'>
         <button className={`${poppins.className} bg-[#00A85A] flex  text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
-          Our Services
+          Know more
         </button>
         </div>
       </div>
