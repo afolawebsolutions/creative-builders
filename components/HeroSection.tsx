@@ -24,8 +24,8 @@ export default function HeroSection() {
             placeholder="Enter your email address"
             className="px-2 lg:px-4 py-2 bg-transparent rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4caf50]"
           />
-          <button className="bg-[#4caf50] md:h-[50px] h-[40px] text-white px-2 py-1  lg:px-4 rounded-full text-[14px] lg:text-[18px]">
-            Start a project <span className="font-bold">-&gt;</span>
+          <button className="bg-[#00A85A] md:h-[50px] h-[40px] text-white px-2 py-1  lg:px-4 rounded-full text-[12px] lg:text-[18px]">
+            Start project <span className="font-bold">-&gt;</span>
           </button>
         </div>
       </div>
