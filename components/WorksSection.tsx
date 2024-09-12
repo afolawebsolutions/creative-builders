@@ -61,7 +61,7 @@ export default function WorksSection() {
         <h2 className="text-3xl md:text-4xl font-bold">
           Our <span className="text-green-500">Work </span>Speaks for Itself!
         </h2>
-        <p className={`${firaCode.className} md:text-xl text-lg text-[#FFFFFF] ml-80 mr-80`}>
+        <p className={`${firaCode.className} md:text-xl text-lg text-[#FFFFFF] lg:ml-80 lg:mr-80`}>
           Explore our diverse range of projects, each crafted with creativity and precision.
         </p>
       </div>
