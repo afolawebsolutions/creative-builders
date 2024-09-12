@@ -15,30 +15,11 @@ const firaCode = Fira_Code({
   weight: ['400', '700'],
 });
 
-// Custom types for slider arrow props
-interface ArrowProps {
-  onClick?: () => void;
-}
-
-// Custom Next Arrow component
-const SampleNextArrow: React.FC<ArrowProps> = ({ onClick }) => (
-  <button className="bg-[#1b4d4d] text-white p-2 rounded-full absolute right-0 z-10" onClick={onClick}>
-    <ChevronRight className="w-6 h-6" />
-  </button>
-);
-
-// Custom Prev Arrow component
-const SamplePrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
-  <button className="bg-[#1b4d4d] text-white p-2 rounded-full absolute left-0 z-10" onClick={onClick}>
-    <ChevronLeft className="w-6 h-6" />
-  </button>
-);
-
 export default function WorksSection() {
   const sliderRef = useRef<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState<number>(0);
 
-  // Slick slider settings
+  // Slick slider settings without arrows
   const settings = {
     infinite: true,
     slidesToShow: 3,
@@ -48,8 +29,7 @@ export default function WorksSection() {
     speed: 500,
     dots: true,
     beforeChange: (current: number, next: number) => setActiveSlide(next),
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    arrows: false, // Disable the built-in arrows completely
     responsive: [
       {
         breakpoint: 990,
@@ -103,7 +83,8 @@ export default function WorksSection() {
             );
           })}
         </Slider>
-        
+
+        {/* Manual arrows and slide indicator at the bottom middle */}
         <div className="flex justify-center mt-4 space-x-6">
           {/* Left arrow button */}
           <button

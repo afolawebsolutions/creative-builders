@@ -35,7 +35,7 @@ export default function HeroSection() {
           alt="Person holding IDEA sign"
           width={500}
           height={500}
-          className="object-contain fill-transparent" // Ensures the image covers the area while maintaining its aspect ratio
+          className="object-contain fill-transparent" 
         />
       </div>
     </section>
