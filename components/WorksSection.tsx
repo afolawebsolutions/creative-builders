@@ -83,7 +83,7 @@ export default function WorksSection() {
                   layout="responsive"
                   width={500}
                   height={400}
-                  className="rounded-lg"
+                  className="rounded-[40px]"
                 />
                 <h3 className="text-center mt-4 font-semibold ">{work.title}</h3>
               </div>
