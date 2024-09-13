@@ -37,7 +37,7 @@ export default function HeroSection() {
           alt="Person holding IDEA sign"
           width={500}
           height={500}
-          className="object-contain fill-transparent md:w-[80%]" 
+          className="object-contain backdrop-filter    md:w-[80%]" 
         />
       </div>
     </section>
