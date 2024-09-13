@@ -70,6 +70,9 @@ export default function Navbar() {
             <a href="#section4" className="hover:underline text-[18px]">
               Contact
             </a>
+            <a href="#section3" className="hover:underline text-[18px]">
+              Services
+            </a>
           </div>
         </div>
 
