@@ -56,7 +56,7 @@ export default function WorksSection() {
   };
 
   return (
-    <section className="bg-[#23707A] text-white p-8 lg:p-16">
+    <section id='works' className="bg-[#23707A] text-white p-8 lg:p-16">
       <div className="mb-12 text-center flex flex-col gap-3">
         <h2 className="text-3xl md:text-4xl font-bold">
           Our <span className="text-green-500">Work </span>Speaks for Itself!

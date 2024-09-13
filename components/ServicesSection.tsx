@@ -15,7 +15,7 @@ const archivo = Archivo({
 
 export default function ServicesSection() {
   return (
-    <section className="bg-white p-8 md:p-16 lg:px-[10%] lg:mb-12">
+    <section id='service' className="bg-white p-8 md:p-16 lg:px-[10%] lg:mb-12">
       <h2 className={`${archivo.className} text-3xl md:text-5xl font-extrabold mb-4 text-center text-[#545c58]`}>Our Services</h2>
       <p className={`${firaCode.className} text-center mb-12 text-[#000000] text-xl`}>
         Your all-in-one powerhouse to launch and scale simple and extensive projects.

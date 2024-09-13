@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("#23707A"); // default color
+  const [BarBackground, setBarBackground] = useState("#11ae6070");
   const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg"); // default logo
   const navbarRef = useRef<HTMLDivElement>(null);
 
@@ -15,22 +16,26 @@ export default function Navbar() {
     const scrollPosition = window.scrollY;
 
     // Detecting different sections (change based on your sections' heights)
-    if (scrollPosition < 300) {
+    if (scrollPosition < 650) {
       // Section 1
       setNavbarBackground("#23707A");
+      setBarBackground("#11ae6070")
       setLogoSrc("/Assets/Asset 10 2.svg");
-    } else if (scrollPosition >= 300 && scrollPosition < 600) {
+    } else if (scrollPosition >= 650 && scrollPosition < 1100) {
       // Section 2
-      setNavbarBackground("#FF5733");
-      setLogoSrc("/Assets/logo2.svg");
-    } else if (scrollPosition >= 600 && scrollPosition < 900) {
+      setNavbarBackground("#7EACB5");
+      setBarBackground("#7EACB5")
+      setLogoSrc("/Assets/Asset 9 1.svg");
+    } else if (scrollPosition >= 1100 && scrollPosition < 2300) {
       // Section 3
-      setNavbarBackground("#C70039");
-      setLogoSrc("/Assets/logo3.svg");
+      setNavbarBackground("#7EACB5");
+      setBarBackground("#7EACB5")
+      setLogoSrc("/Assets/Asset 9 1.svg");
     } else {
       // Section 4 or other sections
-      setNavbarBackground("#900C3F");
-      setLogoSrc("/Assets/logo4.svg");
+      setNavbarBackground("#23707A");
+      setBarBackground("#11ae6070")
+      setLogoSrc("/Assets/Asset 10 2.svg");
     }
   };
 
@@ -44,15 +49,20 @@ export default function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className="fixed w-full top-0 left-0 z-50 transition-colors duration-500"
+      className="fixed w-full text-white z-50 transition-colors duration-500 "
       style={{ backgroundColor: navbarBackground }}
     >
-      <div className=" mx-auto flex md:justify-around justify-between items-center p-8 md:px-[5%]">
+      <div className=" mx-auto flex md:justify-around justify-between items-center p-2 md:p-4 md:px-[5%]">
         {/* Logo */}
-        <Image src={logoSrc} alt="Logo" width={210} height={100} />
+        <Image src={logoSrc} alt="Logo" width={190} height={80} />
 
         <div className="hidden md:flex items-center justify-center flex-grow ">
-          <div className="bg-[#11ae6070] rounded-full px-6 py-4 flex items-center justify-between lg:w-[80%] md:w-fit space-x-2">
+          <div className="bg-[#11ae6070] rounded-full px-6 py-3 flex items-center justify-around lg:w-[70%] md:w-fit space-x-2"
+          style={{ backgroundColor: BarBackground }}
+          >
+            <a href="#section1" className="hover:underline text-[18px]">
+              Home
+            </a>
             <a href="#section1" className="hover:underline text-[18px]">
               Home
             </a>
@@ -68,7 +78,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="bg-white text-gray-950 text-[20px] px-4 py-4 rounded-full hidden md:block">
+        <button className="bg-white text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:block">
           Contact Sales
         </button>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -91,7 +101,7 @@ export default function Navbar() {
             Contact
           </a>
           <button className="bg-white text-[#1b4d4d] px-4 py-2 rounded-full mt-4 w-full">
-            Sign Up
+          Contact Sales
           </button>
         </div>
       )}
