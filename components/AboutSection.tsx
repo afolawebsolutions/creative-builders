@@ -13,7 +13,8 @@ const firaCode = Fira_Code({
 
 export default function AboutSection() {
   return (
-    <section id='aboutme' className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]">
+    <section id='aboutme' className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]"
+    >
       <div className="md:w-1/2 mb-8 md:mb-0">
         <Image 
           src="/Assets/image 3.png" 

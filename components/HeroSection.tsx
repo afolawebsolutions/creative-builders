@@ -4,7 +4,9 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5">
+    <section id="hero" className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
+    
+    >
       <div className="md:w-1/2 sm:text-center pb-11">
       <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center">
         <h2 className="text-3xl lg:text-[4rem]  font-archivo">
