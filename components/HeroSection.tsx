@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-5 md:px-[7%] px-5">
+    <section className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5">
       <div className="md:w-1/2 sm:text-center pb-11">
       <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center">
         <h2 className="text-3xl lg:text-[4rem]  font-archivo">
@@ -29,13 +29,13 @@ export default function HeroSection() {
           </button>
         </div>
       </div>
-      <div className="md:w-1/2 mb-8 md:mt-0 flex justify-center">
+      <div className="md:w-[50%] mb-8 md:mt-0 flex justify-end  ">
         <Image
           src="/Assets/Idea Img 1.png"
           alt="Person holding IDEA sign"
           width={500}
           height={500}
-          className="object-contain fill-transparent" 
+          className="object-contain fill-transparent md:w-[80%]" 
         />
       </div>
     </section>
