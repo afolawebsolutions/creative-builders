@@ -3,16 +3,16 @@ import reviews from '@/constants/Reviews'
 
 export default function ReviewsSection() {
   return (
-    <section className="bg-[#e6f3fa] py-12">
+    <section className=" py-12 px-3 md:px-[5%] lg:px-[8%]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What our client have to say about us!</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What our <span className='text-green-500'>client</span> have to say about us!</h2>
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <Image src="/Assets/image 4.svg" alt="Client Illustration" width={400} height={300} layout="responsive" 
-            className='mix-blend-multiply '
+          <div className="w-full md:w-[60%] mb-8 md:mb-0">
+            <Image src="/Assets/image 4.svg" alt="Client Illustration" width={600} height={500} layout="responsive" 
+            className='mix-blend-multiply w-full'
             />
           </div>
-          <div className="w-full md:w-5/12 bg-gray-200 rounded-3xl p-6">
+          <div className="w-full md:w-[40%] bg-gray-200 rounded-3xl p-6">
             <h3 className="text-3xl font-bold text-green-500 mb-6">Reviews</h3>
             <div className="space-y-4">
               {reviews.map((review, index) => (
@@ -34,8 +34,8 @@ export default function ReviewsSection() {
                     ></div>
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg">{review.name}</h4>
-                    <p className="text-gray-700">{review.comment}</p>
+                    <h4 className="font-bold text-[14px] md:text-[16px]">{review.name}</h4>
+                    <p className="text-gray-700 text-[12px] md:text-[14px]">{review.comment}</p>
                   </div>
                 </div>
               ))}
