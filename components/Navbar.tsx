@@ -12,7 +12,6 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  section1Ref,
   section2Ref,
   section3Ref,
   section4Ref,
