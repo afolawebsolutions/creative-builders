@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function ContactSection() {
   return (
-    <section className="bg-white py-12 px-4">
+    <section className="bg-white py-12 px-8 md:px-[5%] lg:px-[8%] flex flex-col md:flex-row">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
           Get in touch with our <span className="text-green-500">team</span>
@@ -18,11 +18,12 @@ export default function ContactSection() {
               width={1000}
               height={1000}
               className="w-full h-auto"
+              layout='responsive'
             />
           </div>
-          <div className="w-full lg:w-1/2 bg-gray-100 rounded-3xl p-6 md:p-8 relative">
-            <h3 className="text-2xl font-semibold mb-6">
-              Let's get to know <span className="text-teal-600">you</span>
+          <div className="w-full lg:w-1/2 bg-gray-200 rounded-3xl p-6 md:py-8 md:px-[15%] lg:px-[5%] relative">
+            <h3 className="md:text-2xl text-lg font-semibold mb-6 text-center font-cascadia">
+              Let&apos;s get to know <span className="text-teal-600">you</span>
             </h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -71,13 +72,13 @@ export default function ContactSection() {
                 Submit
               </button>
             </form>
-            <div className="absolute -bottom-[-75px] -left-36 w-56 h-56 lg:w-48 lg:h-48">
+            <div className=" absolute -bottom-[-75px] -left-36 w-56 h-56 lg:w-48 lg:h-48">
               <Image
                 src="/Assets/Contact Us 1.png"
                 alt="Person carrying envelope"
                 width={400}
                 height={500}
-                className="w-full h-auto"
+                className="w-full h-auto hidden md:block"
               />
             </div>
           </div>
