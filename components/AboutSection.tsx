@@ -1,5 +1,8 @@
+"use client";
+
 import Image from 'next/image';
 import { Poppins, Fira_Code } from 'next/font/google';
+import { forwardRef } from 'react';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,9 +14,13 @@ const firaCode = Fira_Code({
   weight: ['400', '700'],
 });
 
-export default function AboutSection() {
+// Using forwardRef to accept and forward a ref
+const AboutSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section id='aboutme' className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]"
+    <section
+      id='aboutme'
+      ref={ref}
+      className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]"
     >
       <div className="md:w-1/2 mb-8 md:mb-0">
         <Image 
@@ -38,11 +45,16 @@ export default function AboutSection() {
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
         <div className='flex justify-center md:justify-start'>
-        <button className={`${poppins.className} bg-[#00A85A] flex  text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
-          Our Services
-        </button>
+          <button className={`${poppins.className} bg-[#00A85A] flex text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
+            Our Services
+          </button>
         </div>
       </div>
     </section>
   );
-}
+});
+
+// Setting a display name for better debugging
+AboutSection.displayName = 'AboutSection';
+
+export default AboutSection;
