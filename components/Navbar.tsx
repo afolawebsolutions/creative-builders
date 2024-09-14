@@ -21,6 +21,8 @@ export default function Navbar({
   const [navbarBackground, setNavbarBackground] = useState("#23707A");
   const [barBackground, setBarBackground] = useState("#11ae6070");
   const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg");
+  const [logoWidth, setLogoWidth] = useState(200);
+  const [logoHeight, setLogoHeight] = useState(10);
   const [buttonText, setButtonText] = useState("Work with us");
   const [buttonColor, setButtonColor] = useState("bg-white");
 
@@ -37,6 +39,8 @@ export default function Navbar({
       setLogoSrc("/Assets/Asset 10 2.svg");
       setButtonColor("bg-white text-black")
       setButtonText("Work with us")
+      setLogoWidth(200);
+      setLogoHeight(10);
     } else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
       // Section 2
       setNavbarBackground("#7EACB5");
@@ -44,6 +48,8 @@ export default function Navbar({
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white")
       setButtonText("Book a Call")
+      setLogoWidth(120);
+      setLogoHeight(10);
     } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
       // Section 3
       setNavbarBackground("#7EACB5");
@@ -51,6 +57,8 @@ export default function Navbar({
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white")
       setButtonText("Book a Call")
+      setLogoWidth(120);
+      setLogoHeight(10)
     } else {
       // Section 4
       setNavbarBackground("#23707A");
@@ -58,6 +66,8 @@ export default function Navbar({
       setLogoSrc("/Assets/Asset 10 2.svg");
       setButtonColor("bg-[#00A85A] text-white")
       setButtonText("Book a Call")
+      setLogoWidth(120);
+      setLogoHeight(10)
     }
   };
 
@@ -71,12 +81,12 @@ export default function Navbar({
   return (
     <>
       <nav
-        className="fixed w-full text-white z-50 transition-colors duration-500"
+        className="fixed w-full text-white z-50 transition-colors duration-500 pt-5 md:pt-0"
         style={{ backgroundColor: navbarBackground }}
       >
         <div className="mx-auto flex md:justify-around justify-between items-center p-2 md:p-4 md:px-[5%]">
           {/* Logo */}
-          <Image src={logoSrc} alt="Logo" width={190} height={70} />
+          <Image src={logoSrc} alt="Logo" width={logoWidth} height={logoHeight} />
 
           <div className="hidden md:flex items-center justify-center flex-grow">
             <div
@@ -105,7 +115,7 @@ export default function Navbar({
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-10 h-10" /> : <Menu className="w-10 h-10" />}
+            {isMenuOpen ? <X className="w-12 h-12" /> : <Menu className="w-12 h-12" />}
           </button>
         </div>
 

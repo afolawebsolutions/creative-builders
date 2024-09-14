@@ -12,7 +12,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
       className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
     >
       <div className="md:w-1/2 sm:text-center pb-11">
-        <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center">
+        <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center pt-7">
           <h2 className="text-3xl lg:text-[4rem] font-archivo">
             Your <span className="font-cascadia">Vision!</span>
           </h2>
@@ -38,7 +38,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           </button>
         </div>
       </div>
-      <div className="md:w-[50%] mb-8 md:mt-0 flex justify-end">
+      <div className="md:w-[50%] md:mt-0 flex justify-end ">
         <Image
           src="/Assets/Idea Img 1.png"
           alt="Person holding IDEA sign"
