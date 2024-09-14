@@ -7,6 +7,8 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WorksSection from '@/components/WorksSection';
 import Footer from '@/components/Footer';
+import ReviewsSection from '@/components/ReviewSection';
+import ContactSection from '@/components/ContactSection';
 
 export default function Home() {
   // Define refs for each section
@@ -35,6 +37,8 @@ export default function Home() {
       <div ref={section4Ref}>
         <WorksSection />
       </div>
+      <ReviewsSection />
+      <ContactSection />
       <Footer />
     </>
   );
