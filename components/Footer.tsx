@@ -20,7 +20,7 @@ const Footer = forwardRef<FooterHandle>((_, ref) => {
   }));
 
   return (
-    <footer id="footer" className="bg-[#143939] text-white p-8 h-[1000px]">
+    <footer id="footer" className="bg-[#23707A] text-white p-8 h-[1000px]">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <p className="mb-4 md:mb-0">&copy; {new Date().getFullYear()} Doodle Digital. All rights reserved.</p>
         <div className="flex space-x-4">
