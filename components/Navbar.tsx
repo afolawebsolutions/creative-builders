@@ -9,12 +9,16 @@ interface NavbarProps {
   section2Ref: RefObject<HTMLDivElement>;
   section3Ref: RefObject<HTMLDivElement>;
   section4Ref: RefObject<HTMLDivElement>;
+  reviewsSectionRef: RefObject<HTMLDivElement>;
+  contactSectionRef: RefObject<HTMLDivElement>;
 }
 
 export default function Navbar({
   section2Ref,
   section3Ref,
   section4Ref,
+  reviewsSectionRef,
+  contactSectionRef,
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("#23707A");
@@ -29,6 +33,8 @@ export default function Navbar({
     const section2Top = (section2Ref.current?.offsetTop ?? 0) - 80;
     const section3Top = (section3Ref.current?.offsetTop ?? 0) - 80;
     const section4Top = (section4Ref.current?.offsetTop ?? 0) - 90;
+    const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
+    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 90
     const scrollPosition = window.scrollY;
 
     if (scrollPosition < section2Top) {
@@ -36,8 +42,8 @@ export default function Navbar({
       setNavbarBackground("#23707A");
       setBarBackground("#11ae6070");
       setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-white text-black")
-      setButtonText("Work with us")
+      setButtonColor("bg-white text-black");
+      setButtonText("Work with us");
       setLogoWidth(200);
       setLogoHeight(10);
     } else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
@@ -45,8 +51,8 @@ export default function Navbar({
       setNavbarBackground("#7EACB5");
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white")
-      setButtonText("Book a Call")
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Book a Call");
       setLogoWidth(120);
       setLogoHeight(10);
     } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
@@ -54,19 +60,27 @@ export default function Navbar({
       setNavbarBackground("#7EACB5");
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white")
-      setButtonText("Book a Call")
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Book a Call");
       setLogoWidth(120);
-      setLogoHeight(10)
-    } else {
-      // Section 4
+      setLogoHeight(10);
+    } else if (scrollPosition >= section4Top && scrollPosition < reviewsSectionTop) {
       setNavbarBackground("#23707A");
       setBarBackground("#23707A");
       setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-[#00A85A] text-white")
-      setButtonText("Book a Call")
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Read Reviews");
       setLogoWidth(120);
-      setLogoHeight(10)
+      setLogoHeight(10);
+    } else {
+      // Contact Section
+      setNavbarBackground("#7EACB5");
+      setBarBackground("#7EACB5");
+      setLogoSrc("/Assets/Asset 9 1.svg");
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Book a Call");
+      setLogoWidth(120);
+      setLogoHeight(10);
     }
   };
 

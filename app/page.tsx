@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useRef } from 'react';
 import Navbar from '@/components/Navbar';
@@ -6,16 +6,17 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WorksSection from '@/components/WorksSection';
-import Footer from '@/components/Footer';
 import ReviewsSection from '@/components/ReviewSection';
-import ContactSection from '@/components/ContactSection';
+import ContactSection from '@/components/ContactSection'; // Import the ContactSection
+import Footer from '@/components/Footer';
 
 export default function Home() {
-  // Define refs for each section
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
   const section4Ref = useRef<HTMLDivElement>(null);
+  const reviewsSectionRef = useRef<HTMLDivElement>(null);
+  const contactSectionRef = useRef<HTMLDivElement>(null); // Ref for ContactSection
 
   return (
     <>
@@ -24,6 +25,8 @@ export default function Home() {
         section2Ref={section2Ref}
         section3Ref={section3Ref}
         section4Ref={section4Ref}
+        reviewsSectionRef={reviewsSectionRef}
+        contactSectionRef={contactSectionRef} // Pass the ref to the Navbar
       />
       <div ref={section1Ref}>
         <HeroSection />
@@ -37,9 +40,14 @@ export default function Home() {
       <div ref={section4Ref}>
         <WorksSection />
       </div>
-      <ReviewsSection />
-      <ContactSection />
+      <div ref={reviewsSectionRef}>
+        <ReviewsSection />
+      </div>
+      <div ref={contactSectionRef}> {/* Wrap ContactSection with ref */}
+        <ContactSection />
+      </div>
       <Footer />
     </>
   );
 }
+
