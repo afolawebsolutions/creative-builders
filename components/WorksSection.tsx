@@ -122,7 +122,7 @@ const WorksSection = forwardRef<SliderHandle>((_, ref) => {
           </button>
         </div>
       </div>
-      <div className="max-w-[38rem] mx-auto text-left">
+      <div className="max-w-[38rem] mx-auto md:text-left text-center">
         <p className={`${poppins.className} text-white text-lg md:text-xl leading-relaxed mb-4 md:mb-0 inline text-left`}>
           We have a vast range of services across our creative and building arms. Our goal is to be your all-in-one powerhouse to elevate your brand, complete projects seamlessly, and stand out even without an in-house team!
           <button className={`${poppins.className} bg-[#00A85A] text-white text-lg font-normal py-1 px-3 ml-4 rounded-full hover:bg-[#008c4a] transition duration-300 inline-block align-middle mt-1`}>
