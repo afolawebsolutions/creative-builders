@@ -8,7 +8,9 @@ export default function ReviewsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What our client have to say about us!</h2>
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <Image src="/Assets/image 4.svg" alt="Client Illustration" width={400} height={300} layout="responsive" />
+            <Image src="/Assets/image 4.svg" alt="Client Illustration" width={400} height={300} layout="responsive" 
+            className='mix-blend-multiply '
+            />
           </div>
           <div className="w-full md:w-5/12 bg-gray-200 rounded-3xl p-6">
             <h3 className="text-3xl font-bold text-green-500 mb-6">Reviews</h3>
