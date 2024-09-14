@@ -13,13 +13,13 @@ const reviews = [
     },
     {
       name: 'Emmanuel',
-      image: '/Assets/Group 35.svg',
+      image: '/Assets/Group 37.svg',
       comment: 'Thanks mate, the video campaign just hit 1M!',
       status: 'green',
     },
     {
       name: 'Christine',
-      image: '/Assets/group 37.svg',
+      image: '/Assets/group 35.svg',
       comment: 'Never knew I could launch a product that fast...',
       status: 'gray',
     },

@@ -11,6 +11,7 @@ interface NavbarProps {
   section4Ref: RefObject<HTMLDivElement>;
   reviewsSectionRef: RefObject<HTMLDivElement>;
   contactSectionRef: RefObject<HTMLDivElement>;
+  footerRef: RefObject<HTMLDivElement>;
 }
 
 export default function Navbar({
@@ -19,6 +20,7 @@ export default function Navbar({
   section4Ref,
   reviewsSectionRef,
   contactSectionRef,
+  footerRef
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("#23707A");
@@ -28,6 +30,7 @@ export default function Navbar({
   const [logoHeight, setLogoHeight] = useState(10);
   const [buttonText, setButtonText] = useState("Work with us");
   const [buttonColor, setButtonColor] = useState("bg-white");
+  
 
   const handleScroll = () => {
     const section2Top = (section2Ref.current?.offsetTop ?? 0) - 80;
@@ -35,6 +38,7 @@ export default function Navbar({
     const section4Top = (section4Ref.current?.offsetTop ?? 0) - 90;
     const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
     const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 90
+    const footerTop = (footerRef.current?.offsetTop ?? 0) - 90
     const scrollPosition = window.scrollY;
 
     if (scrollPosition < section2Top) {
@@ -72,7 +76,7 @@ export default function Navbar({
       setButtonText("Read Reviews");
       setLogoWidth(120);
       setLogoHeight(10);
-    } else {
+    } else if (scrollPosition >= reviewsSectionTop && scrollPosition < contactSectionTop) {
       // Contact Section
       setNavbarBackground("#7EACB5");
       setBarBackground("#7EACB5");
@@ -81,8 +85,25 @@ export default function Navbar({
       setButtonText("Book a Call");
       setLogoWidth(120);
       setLogoHeight(10);
-    }
-  };
+    } else if (scrollPosition >= contactSectionTop && scrollPosition < footerTop) {
+    // Contact Section
+    setNavbarBackground("#7EACB5");
+    setBarBackground("#7EACB5");
+    setLogoSrc("/Assets/Asset 9 1.svg");
+    setButtonColor("bg-[#00A85A] text-white");
+    setButtonText("Book a Call");
+    setLogoWidth(120);
+    setLogoHeight(10);
+  }
+  else{
+    setNavbarBackground("#23707A");
+    setBarBackground("#23707A");
+    setLogoSrc("/Assets/Asset 10 2.svg");
+    setButtonColor("bg-[#00A85A] text-white");
+    setButtonText("Read Reviews");
+    setLogoWidth(120);
+    setLogoHeight(10);
+  }};
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);

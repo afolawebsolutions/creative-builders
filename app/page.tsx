@@ -16,17 +16,19 @@ export default function Home() {
   const section3Ref = useRef<HTMLDivElement>(null);
   const section4Ref = useRef<HTMLDivElement>(null);
   const reviewsSectionRef = useRef<HTMLDivElement>(null);
-  const contactSectionRef = useRef<HTMLDivElement>(null); // Ref for ContactSection
+  const contactSectionRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null); // Ref for ContactSection
 
   return (
     <>
       <Navbar
-        section1Ref={section1Ref}
+      section1Ref={section1Ref}
         section2Ref={section2Ref}
         section3Ref={section3Ref}
         section4Ref={section4Ref}
         reviewsSectionRef={reviewsSectionRef}
-        contactSectionRef={contactSectionRef} // Pass the ref to the Navbar
+        contactSectionRef={contactSectionRef}
+        footerRef={footerRef} // Pass the ref to the Navbar
       />
       <div ref={section1Ref}>
         <HeroSection />
@@ -46,7 +48,9 @@ export default function Home() {
       <div ref={contactSectionRef}> {/* Wrap ContactSection with ref */}
         <ContactSection />
       </div>
-      <Footer />
+      <div ref={footerRef}> {/* Wrap ContactSection with ref */}
+        <Footer/>
+      </div>
     </>
   );
 }

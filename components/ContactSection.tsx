@@ -69,7 +69,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition duration-300"
+                className="w-full bg-green-500 text-white font-semibold py-3 rounded-[20px] hover:bg-green-600 transition duration-300"
               >
                 Submit
               </button>
