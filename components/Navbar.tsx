@@ -21,7 +21,7 @@ export default function Navbar({
   const [navbarBackground, setNavbarBackground] = useState("#23707A");
   const [barBackground, setBarBackground] = useState("#11ae6070");
   const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg");
-  const [buttonText, setButtonText] = useState("Contact Sales");
+  const [buttonText, setButtonText] = useState("Work with us");
   const [buttonColor, setButtonColor] = useState("bg-white");
 
   const handleScroll = () => {
@@ -35,6 +35,8 @@ export default function Navbar({
       setNavbarBackground("#23707A");
       setBarBackground("#11ae6070");
       setLogoSrc("/Assets/Asset 10 2.svg");
+      setButtonColor("bg-white text-black")
+      setButtonText("Work with us")
     } else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
       // Section 2
       setNavbarBackground("#7EACB5");
