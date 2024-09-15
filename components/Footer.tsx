@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import {  Fira_Code } from 'next/font/google';
+import Image from 'next/image';
+import { Fira_Code } from 'next/font/google';
 import { forwardRef } from 'react';
 
 const firaCode = Fira_Code({
@@ -7,10 +7,9 @@ const firaCode = Fira_Code({
   weight: ['400', '700'],
 });
 
-
 const Footer = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <footer ref={ref} className={`${firaCode.className}  bg-[#23707A] text-white py-12 px-6 lg:px-12`}>
+    <footer ref={ref} className={`${firaCode.className} bg-[#23707A] text-white py-12 px-6 lg:px-12`}>
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-8 lg:space-y-0">
           {/* Logo, Tagline, and Button */}
@@ -24,10 +23,17 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
             <button className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-sm font-[20] flex items-center transition-colors hover:bg-[#1ea34e]">
               Build with us
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
-            <div className="mt-8 lg:mt-0 lg:w-1/4">
+          </div>
+
+          {/* Contact Info */}
+          <div className="mt-8 lg:mt-0 lg:w-1/4">
             <div className="flex items-center mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -42,24 +48,23 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
               <span className="text-sm">info@creativebuilders.com.ng</span>
             </div>
           </div>
-            
-          </div>
 
+          {/* Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 text-sm lg:w-2/3">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
-                <h3 className="text-[#22c55e] font-light text-2xl  mb-3">{category}</h3>
+                <h3 className="text-[#22c55e] font-light text-2xl mb-3">{category}</h3>
                 <ul className="space-y-2 font-[20] text-[12px]">
                   {getLinksForCategory(category).map((link) => (
-                    <li key={link}>{link} </li>
+                    <li key={link}>{link}</li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-
-          
         </div>
+
+        {/* Footer Bottom */}
         <div className="mt-12 pt-6 border-t border-[#1a5e5e] font-thin">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm">&copy; 2024 Creative Builders. All rights reserved.</p>
@@ -77,8 +82,10 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       </div>
     </footer>
-  )
-})
+  );
+});
+
+
 
 Footer.displayName = 'Footer'
 

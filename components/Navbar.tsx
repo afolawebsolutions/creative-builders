@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, RefObject } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import Image from "next/image";
 
 interface NavbarProps {
@@ -13,6 +13,17 @@ interface NavbarProps {
   contactSectionRef: RefObject<HTMLDivElement>;
   footerRef: RefObject<HTMLDivElement>;
 }
+const ArrowInBagIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+  
+  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" fill="black"/>
+  
+  <path d="M6 10H10M10 10L8 12M10 10L8 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+</svg>
+
+);
+
 
 export default function Navbar({
   section2Ref,
@@ -20,7 +31,7 @@ export default function Navbar({
   section4Ref,
   reviewsSectionRef,
   contactSectionRef,
-  footerRef
+  footerRef,
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -30,16 +41,16 @@ export default function Navbar({
   const [logoWidth, setLogoWidth] = useState(200);
   const [logoHeight, setLogoHeight] = useState(10);
   const [buttonText, setButtonText] = useState("Work with us");
-  const [buttonColor, setButtonColor] = useState("bg-white");
-  
+  const [buttonColor, setButtonColor] = useState("bg-[#FDF9D1]");
+  const [buttonIcon, setButtonIcon] = useState(<ArrowInBagIcon/>);
 
   const handleScroll = () => {
     const section2Top = (section2Ref.current?.offsetTop ?? 0) - 80;
     const section3Top = (section3Ref.current?.offsetTop ?? 0) - 80;
     const section4Top = (section4Ref.current?.offsetTop ?? 0) - 90;
     const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
-    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 90
-    const footerTop = (footerRef.current?.offsetTop ?? 0) - 90
+    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 90;
+    const footerTop = (footerRef.current?.offsetTop ?? 0) - 90;
     const scrollPosition = window.scrollY;
 
     if (scrollPosition < section2Top) {
@@ -47,10 +58,11 @@ export default function Navbar({
       setNavbarBackground("#23707A");
       setBarBackground("#11ae6070");
       setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-white text-black");
+      setButtonColor("bg-[#FDF9D1] text-black");
       setButtonText("Work with us");
       setLogoWidth(200);
       setLogoHeight(10);
+      setButtonIcon(<ArrowInBagIcon/>)
     } else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
       // Section 2
       setNavbarBackground("#7EACB5");
@@ -60,6 +72,7 @@ export default function Navbar({
       setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
+      setButtonIcon(<Phone/>)
     } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
       // Section 3
       setNavbarBackground("#7EACB5");
@@ -69,7 +82,11 @@ export default function Navbar({
       setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
-    } else if (scrollPosition >= section4Top && scrollPosition < reviewsSectionTop) {
+      setButtonIcon(<Phone/>)
+    } else if (
+      scrollPosition >= section4Top &&
+      scrollPosition < reviewsSectionTop
+    ) {
       setNavbarBackground("#23707A");
       setBarBackground("#23707A");
       setLogoSrc("/Assets/Asset 10 2.svg");
@@ -77,7 +94,11 @@ export default function Navbar({
       setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
-    } else if (scrollPosition >= reviewsSectionTop && scrollPosition < contactSectionTop) {
+      setButtonIcon(<Phone/>)
+    } else if (
+      scrollPosition >= reviewsSectionTop &&
+      scrollPosition < contactSectionTop
+    ) {
       // Contact Section
       setNavbarBackground("#7EACB5");
       setBarBackground("#7EACB5");
@@ -86,25 +107,31 @@ export default function Navbar({
       setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
-    } else if (scrollPosition >= contactSectionTop && scrollPosition < footerTop) {
-    // Contact Section
-    setNavbarBackground("#7EACB5");
-    setBarBackground("#7EACB5");
-    setLogoSrc("/Assets/Asset 9 1.svg");
-    setButtonColor("bg-[#00A85A] text-white");
-    setButtonText("Book a call");
-    setLogoWidth(120);
-    setLogoHeight(10);
-  }
-  else{
-    setNavbarBackground("#23707A");
-    setBarBackground("#23707A");
-    setLogoSrc("/Assets/Asset 10 2.svg");
-    setButtonColor("bg-[#00A85A] text-white");
-    setButtonText("Book a call");
-    setLogoWidth(120);
-    setLogoHeight(10);
-  }};
+      setButtonIcon(<Phone/>)
+    } else if (
+      scrollPosition >= contactSectionTop &&
+      scrollPosition < footerTop
+    ) {
+      // Contact Section
+      setNavbarBackground("#7EACB5");
+      setBarBackground("#7EACB5");
+      setLogoSrc("/Assets/Asset 9 1.svg");
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Book a call");
+      setLogoWidth(120);
+      setLogoHeight(10);
+      setButtonIcon(<Phone/>)
+    } else {
+      setNavbarBackground("#23707A");
+      setBarBackground("#23707A");
+      setLogoSrc("/Assets/Asset 10 2.svg");
+      setButtonColor("bg-[#00A85A] text-white");
+      setButtonText("Book a call");
+      setLogoWidth(120);
+      setLogoHeight(10);
+      setButtonIcon(<Phone/>)
+    }
+  };
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
@@ -121,7 +148,12 @@ export default function Navbar({
       >
         <div className="mx-auto flex md:justify-around justify-between items-center p-2 md:p-4 md:px-[5%]">
           {/* Logo */}
-          <Image src={logoSrc} alt="Logo" width={logoWidth} height={logoHeight} />
+          <Image
+            src={logoSrc}
+            alt="Logo"
+            width={logoWidth}
+            height={logoHeight}
+          />
 
           <div className="hidden md:flex items-center justify-center flex-grow">
             <div
@@ -142,10 +174,25 @@ export default function Navbar({
                   Services <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
                 {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                    <a href="#service1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 1</a>
-                    <a href="#service2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 2</a>
-                    <a href="#service3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 3</a>
+                  <div className="absolute top-full items-center mt-2 w-30 bg-[#59868b] shadow-lg py-2 z-10 border-[1px]">
+                    <a
+                      href="#service1"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                    >
+                      Creative
+                    </a>
+                    <a
+                      href="#service2"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                    >
+                      Development
+                    </a>
+                    <a
+                      href="#service3"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                    >
+                      Consulting
+                    </a>
                   </div>
                 )}
               </div>
@@ -155,46 +202,73 @@ export default function Navbar({
             </div>
           </div>
 
-          <button className={`${buttonColor} text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:block`}>
-              {buttonText}
-            </button>
+          <button
+            className={`${buttonColor} text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2`}
+          >
+            {buttonIcon}
+            <span>{buttonText}</span>
+          </button>
+
           <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-12 h-12" /> : <Menu className="w-12 h-12" />}
+            {isMenuOpen ? (
+              <X className="w-12 h-12" />
+            ) : (
+              <Menu className="w-12 h-12" />
+            )}
           </button>
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-[#143939] rounded-lg p-4 max-h-[90vh] overflow-y-auto">
-            <a href="#section1" className="block py-2">
+          <div className="md:hidden mt-4 bg-[#59868b] rounded-lg p-4 max-h-[90vh] overflow-y-auto">
+            <a href="#section1" className="block py-2 hover:bg-[#23707A] px-2">
               Home
             </a>
-            <a href="#section2" className="block py-2">
+            <a href="#section2" className="block py-2 hover:bg-[#23707A] px-2">
               About
             </a>
             <div>
               <button
-                className="flex items-center justify-between w-full py-2"
+                className="flex items-center justify-between w-full py-2 px-2"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
                 Services <ChevronDown className="h-4 w-4" />
               </button>
               {isServicesOpen && (
-                <div className="pl-4">
-                  <a href="#service1" className="block py-2">Service 1</a>
-                  <a href="#service2" className="block py-2">Service 2</a>
-                  <a href="#service3" className="block py-2">Service 3</a>
-                </div>
+                <div className=" w-30 bg-[#59868b] shadow-lg py-2 z-10 ">
+                <a
+                  href="#service1"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                >
+                  Creative
+                </a>
+                <a
+                  href="#service2"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                >
+                  Development
+                </a>
+                <a
+                  href="#service3"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                >
+                  Consulting
+                </a>
+              </div>
               )}
             </div>
-            <a href="#section4" className="block py-2">
+            <a href="#section4" className="block py-2 hover:bg-[#23707A] px-2">
               Contact
             </a>
-            <button className="bg-white text-[#1b4d4d] px-4 py-2 rounded-full mt-4 w-full">
-              Contact Sales
-            </button>
+            <button
+            className={`${buttonColor} text-gray-950 text-[14px] px-20 py-2 rounded-full  flex items-center space-x-2`}
+          >
+            {buttonIcon}
+            <span>{buttonText}</span>
+          </button>
+
           </div>
         )}
       </nav>

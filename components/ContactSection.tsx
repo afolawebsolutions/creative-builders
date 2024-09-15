@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import Image from 'next/image';
+import { CornerDownRight } from 'lucide-react';
 
 // Use forwardRef to accept the ref
 const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
@@ -9,7 +10,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
           Get in touch with our <span className="text-green-500">team</span>
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center text-black mb-12">
           The all-in-one powerhouse team to help you launch & scale faster
         </p>
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
@@ -69,8 +70,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white font-semibold py-3 rounded-[20px] hover:bg-green-600 transition duration-300"
+                className="w-full bg-green-500 text-white font-semibold text-lg py-3 rounded-[20px] hover:bg-green-600 transition duration-300 flex justify-center"
               >
+              <CornerDownRight/>
                 Submit
               </button>
             </form>
