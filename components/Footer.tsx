@@ -11,7 +11,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <footer ref={ref} className={`${firaCode.className} bg-[#23707A] text-white py-12 px-6 md:px-[7%] lg:py-[5%] `}>
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-start justify-center md:justify-start space-y-8 md:space-y-0 gap-9 lg:gap-[20%]">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-center md:justify-start space-y-8 md:space-y-0 gap-9 lg:gap-[10%]">
           <div className="flex flex-col items-center lg:items-start space-y-4 lg:w-1/4">
             <Image src="/Assets/Asset 10 1.svg" alt="Creative Builders Logo" width={150} height={40} />
             <p className="text-[12px] md:text-[16px] font-extralight lg:text-left text-center ">
