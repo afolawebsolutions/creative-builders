@@ -56,7 +56,7 @@ export default function Navbar({
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a Call");
+      setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
     } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
@@ -65,7 +65,7 @@ export default function Navbar({
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a Call");
+      setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
     } else if (scrollPosition >= section4Top && scrollPosition < reviewsSectionTop) {
@@ -73,7 +73,7 @@ export default function Navbar({
       setBarBackground("#23707A");
       setLogoSrc("/Assets/Asset 10 2.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Read Reviews");
+      setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
     } else if (scrollPosition >= reviewsSectionTop && scrollPosition < contactSectionTop) {
@@ -82,7 +82,7 @@ export default function Navbar({
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a Call");
+      setButtonText("Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
     } else if (scrollPosition >= contactSectionTop && scrollPosition < footerTop) {
@@ -91,7 +91,7 @@ export default function Navbar({
     setBarBackground("#7EACB5");
     setLogoSrc("/Assets/Asset 9 1.svg");
     setButtonColor("bg-[#00A85A] text-white");
-    setButtonText("Book a Call");
+    setButtonText("Book a call");
     setLogoWidth(120);
     setLogoHeight(10);
   }
@@ -100,7 +100,7 @@ export default function Navbar({
     setBarBackground("#23707A");
     setLogoSrc("/Assets/Asset 10 2.svg");
     setButtonColor("bg-[#00A85A] text-white");
-    setButtonText("Read Reviews");
+    setButtonText("Book a call");
     setLogoWidth(120);
     setLogoHeight(10);
   }};
