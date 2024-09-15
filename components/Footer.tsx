@@ -9,17 +9,17 @@ const firaCode = Fira_Code({
 
 const Footer = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <footer ref={ref} className={`${firaCode.className} bg-[#23707A] text-white py-12 px-6 lg:px-12 `}>
+    <footer ref={ref} className={`${firaCode.className} bg-[#23707A] text-white py-12 px-6 md:px-[7%] lg:py-[5%] `}>
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-start space-y-8 lg:space-y-0">
-          <div className="flex flex-col items-start space-y-4 lg:w-1/4">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-center md:justify-start space-y-8 md:space-y-0 gap-9 lg:gap-[20%]">
+          <div className="flex flex-col items-center lg:items-start space-y-4 lg:w-1/4">
             <Image src="/Assets/Asset 10 1.svg" alt="Creative Builders Logo" width={150} height={40} />
-            <p className="text-[12px] md:text-[16px] font-extralight">
+            <p className="text-[12px] md:text-[16px] font-extralight lg:text-left text-center ">
               Your all-in-one powerhouse<br />
               to launch and scale<br />
               simple and extensive projects.
             </p>
-            <button className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-[12px] md:text-[16px] font-[20] flex items-center transition-colors hover:bg-[#1ea34e]">
+            <button className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-[12px] md:text-[16px] font-[20] flex items-center transition-colors hover:bg-[#1ea34e] w-fit  ">
               Build with us
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path
@@ -45,11 +45,11 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
           </div>
 
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 md:gap-4 gap-2  text-sm lg:w-3/5 lg:pl-28">
+          <div className="grid grid-cols-2  md:grid-cols-5 md:gap-8 gap-2  text-sm lg:w-[60%] lg:pr-[10%] ">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
                 <h3 className="text-[#22c55e] font-light text-xl mb-3">{category}</h3>
-                <ul className="space-y-2 font-[20] text-[12px] md:text-[14px]">
+                <ul className="space-y-2 font-[20] text-[12px] ">
                   {getLinksForCategory(category).map((link) => (
                     <li key={link}>{link}</li>
                   ))}
