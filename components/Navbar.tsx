@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, RefObject } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 interface NavbarProps {
@@ -23,6 +23,7 @@ export default function Navbar({
   footerRef
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("#23707A");
   const [barBackground, setBarBackground] = useState("#11ae6070");
   const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg");
@@ -133,9 +134,21 @@ export default function Navbar({
               <a href="#section2" className="hover:underline text-[18px]">
                 About
               </a>
-              <a href="#section3" className="hover:underline text-[18px]">
-                Services
-              </a>
+              <div className="relative">
+                <button
+                  className="hover:underline text-[18px] flex items-center"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                >
+                  Services <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
+                    <a href="#service1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 1</a>
+                    <a href="#service2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 2</a>
+                    <a href="#service3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 3</a>
+                  </div>
+                )}
+              </div>
               <a href="#section4" className="hover:underline text-[18px]">
                 Contact
               </a>
@@ -161,9 +174,21 @@ export default function Navbar({
             <a href="#section2" className="block py-2">
               About
             </a>
-            <a href="#section3" className="block py-2">
-              Services
-            </a>
+            <div>
+              <button
+                className="flex items-center justify-between w-full py-2"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                Services <ChevronDown className="h-4 w-4" />
+              </button>
+              {isServicesOpen && (
+                <div className="pl-4">
+                  <a href="#service1" className="block py-2">Service 1</a>
+                  <a href="#service2" className="block py-2">Service 2</a>
+                  <a href="#service3" className="block py-2">Service 3</a>
+                </div>
+              )}
+            </div>
             <a href="#section4" className="block py-2">
               Contact
             </a>

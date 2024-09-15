@@ -45,7 +45,6 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
             
           </div>
 
-          {/* Footer Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 text-sm lg:w-2/3">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
@@ -59,11 +58,8 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
             ))}
           </div>
 
-          {/* Contact Information */}
           
         </div>
-
-        {/* Bottom Section */}
         <div className="mt-12 pt-6 border-t border-[#1a5e5e] font-thin">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm">&copy; 2024 Creative Builders. All rights reserved.</p>
