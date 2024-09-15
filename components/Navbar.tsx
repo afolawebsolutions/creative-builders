@@ -199,14 +199,17 @@ export default function Navbar({
               <a href="#section4" className="hover:underline text-[18px]">
                 Contact
               </a>
+              <a href="#section4" className="hover:underline text-[18px]">
+                Contact
+              </a>
             </div>
           </div>
 
           <button
             className={`${buttonColor} text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2`}
           >
-            {buttonIcon}
-            <span>{buttonText}</span>
+            <span className="hidden lg:flex">{buttonIcon}</span>
+            {buttonText}
           </button>
 
           <button
