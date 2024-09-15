@@ -40,7 +40,7 @@ export default function Navbar({
   const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg");
   const [logoWidth, setLogoWidth] = useState(200);
   const [logoHeight, setLogoHeight] = useState(10);
-  const [buttonText, setButtonText] = useState("Work with us");
+  const [buttonText, setButtonText] = useState(" Work with us");
   const [buttonColor, setButtonColor] = useState("bg-[#FDF9D1]");
   const [buttonIcon, setButtonIcon] = useState(<ArrowInBagIcon/>);
 
@@ -104,7 +104,7 @@ export default function Navbar({
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a call");
+      setButtonText(" Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
@@ -117,7 +117,7 @@ export default function Navbar({
       setBarBackground("#7EACB5");
       setLogoSrc("/Assets/Asset 9 1.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a call");
+      setButtonText(" Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
@@ -126,7 +126,7 @@ export default function Navbar({
       setBarBackground("#23707A");
       setLogoSrc("/Assets/Asset 10 2.svg");
       setButtonColor("bg-[#00A85A] text-white");
-      setButtonText("Book a call");
+      setButtonText(" Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
