@@ -21,7 +21,7 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
               className="mix-blend-multiply w-full"
             />
           </div>
-          <div className="w-full md:w-[40%] bg-gray-200 rounded-[60px] p-6">
+          <div className="w-full md:w-[40%] bg-gray-200 rounded-[60px] p-6 pb-14">
             <h3 className="text-3xl font-bold text-green-500 mb-6 ml-4">Reviews</h3>
             <div className="space-y-4">
               {reviews.map((review, index) => (

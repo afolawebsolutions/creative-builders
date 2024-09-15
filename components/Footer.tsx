@@ -1,20 +1,27 @@
 import Image from 'next/image'
-import { forwardRef } from 'react'
+import {  Fira_Code } from 'next/font/google';
+import { forwardRef } from 'react';
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 
 const Footer = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <footer ref={ref} className="bg-[#23707A] text-white py-12 px-6 lg:px-12">
+    <footer ref={ref} className={`${firaCode.className}  bg-[#23707A] text-white py-12 px-6 lg:px-12`}>
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-8 lg:space-y-0">
           {/* Logo, Tagline, and Button */}
           <div className="flex flex-col items-start space-y-4 lg:w-1/4">
             <Image src="/Assets/Asset 10 1.svg" alt="Creative Builders Logo" width={150} height={40} />
-            <p className="text-sm">
+            <p className="text-sm font-extralight">
               Your all-in-one powerhouse<br />
               to launch and scale<br />
               simple and extensive projects.
             </p>
-            <button className="bg-[#22c55e] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center transition-colors hover:bg-[#1ea34e]">
+            <button className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-sm font-[20] flex items-center transition-colors hover:bg-[#1ea34e]">
               Build with us
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -42,10 +49,10 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 text-sm lg:w-2/3">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
-                <h3 className="text-[#22c55e] font-semibold mb-3">{category}</h3>
-                <ul className="space-y-2">
+                <h3 className="text-[#22c55e] font-light text-2xl  mb-3">{category}</h3>
+                <ul className="space-y-2 font-[20] text-[12px]">
                   {getLinksForCategory(category).map((link) => (
-                    <li key={link}>{link}</li>
+                    <li key={link}>{link} </li>
                   ))}
                 </ul>
               </div>
@@ -57,7 +64,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-6 border-t border-[#1a5e5e]">
+        <div className="mt-12 pt-6 border-t border-[#1a5e5e] font-thin">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm">&copy; 2024 Creative Builders. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 sm:mt-0">
