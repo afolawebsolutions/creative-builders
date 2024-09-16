@@ -32,21 +32,21 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
       ref={ref}
       className="container mx-auto px-6 py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center md:px-[5%]"
     >
-      <div className="md:w-1/2 mb-8 md:mb-0">
+      <div className="md:w-[50%] mb-8 md:mb-0">
         <Image 
           src="/Assets/image 3.png" 
           alt="Person with raised arm" 
           width={500} 
           height={500}
-          className="w-full min-h-[400px] "
+          className="w-full min-h-[230px] md:min-h-[300px] lg:min-h-[400px] "
         />
       </div>
       <div className="md:w-1/2 md:pl-12">
-        <h2 className={`${firaCode.className} text-[#545c58] mb-4`} style={{ fontSize: '15px' }}>
+        <h2 className={`${firaCode.className} text-[#545c58] mb-4`}  style={{ fontSize: '15px' }}>
           About Us
         </h2>
         <h1 
-          className={`${firaCode.className} text-[#545c58] leading-tight mb-6`} 
+          className={`${firaCode.className} text-[#545c58] leading-tight mb-6  `} 
           style={{ fontSize: 'clamp(2.5rem, 5vw, 70px)' }}
         >
           Sky&apos;s the limit, we aim for the <span className="text-green-500">moon! </span>

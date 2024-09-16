@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default width for mobile screens */
+.dynamic-logo {
+    width: 150px; /* Default width for mobile screens */
+  }
+  
+  /* Width for tablet screens */
+  @media (min-width: 768px) {
+    .dynamic-logo {
+      width: 120px; /* Width for medium screens (tablet view) */
+    }
+  }
+  
+  /* Width for larger screens */
+  @media (min-width: 1024px) {
+    .dynamic-logo {
+      width: var(--logo-width, 120px); /* Dynamic width for large screens */
+    }
+  }
+  

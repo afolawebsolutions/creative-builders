@@ -18,7 +18,7 @@ const ArrowInBagIcon = () => (
   
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" fill="black"/>
   
-  <path d="M6 10H10M10 10L8 12M10 10L8 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 10H10M10 10L8 12M10 10L8 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   
 </svg>
 
@@ -157,6 +157,9 @@ export default function Navbar({
             alt="Logo"
             width={logoWidth}
             height={logoHeight}
+            className="dynamic-logo dynamic-logo-lg"
+            style={{ '--logo-width': `${logoWidth}px` } as React.CSSProperties}
+            
           />
 
           <div className="hidden md:flex items-center justify-center flex-grow">
@@ -165,7 +168,7 @@ export default function Navbar({
               style={{ backgroundColor: barBackground }}
             >
               <a onClick={() => scrollToSection(section2Ref)} className="hover:underline text-[18px]">
-                About us
+                About <span className="md:hidden">us</span>
               </a>
               <div className="relative">
                 <button
