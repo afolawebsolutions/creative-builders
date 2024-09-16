@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CornerDownRight } from "lucide-react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
@@ -25,9 +26,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const serviceID = "service_bznlphy";
-    const templateID = "template_ox7g9cq";
-    const userID = "_4lSuctybktBQ9OET";
+    // const serviceID = "service_bznlphy";
+    // const templateID = "template_ox7g9cq";
+    // const userID = "_4lSuctybktBQ9OET";
 
     try {
       await emailjs.send(
