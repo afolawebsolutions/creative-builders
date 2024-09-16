@@ -5,7 +5,8 @@ import Image from "next/image";
 import { CornerDownRight } from "lucide-react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [formData, setFormData] = useState({
@@ -27,13 +28,12 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
 
     // const serviceID = "service_bznlphy";
     // const templateID = "template_ox7g9cq";
-    // const publicKey = "_4lSuctybktBQ9OET";
+    // const userID = "_4lSuctybktBQ9OET";
 
     try {
       await emailjs.send(
         serviceID!,
         templateID!,
-        
         {
           firstname: formData.firstname,
           surname: formData.surname,
@@ -43,7 +43,8 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
           description: formData.description,
           value: formData.value,
         },
-        publicKey,
+        userID
+
       );
       toast.success("Your message has been sent successfully!");
       setFormData({
@@ -161,13 +162,13 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 Submit
               </button>
             </form>
-            <div className="absolute -bottom-[-75px] -left-36 w-56 h-56 lg:w-48 lg:h-48">
-              <Image
+            <div className="absolute -bottom-[-200px] md:-bottom-[-180px] lg:-left-[8rem] md:-left-[4rem] w-56 h-56 lg:w-48 lg:h-48">
+            <Image
                 src="/Assets/Contact Us 1.png"
                 alt="Person carrying envelope"
-                width={400}
+                width={500}
                 height={500}
-                className="w-full h-auto hidden md:block"
+                className="w-[100%] h-[350px] hidden md:block"
               />
             </div>
           </div>

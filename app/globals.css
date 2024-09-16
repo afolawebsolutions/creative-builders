@@ -2,21 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global CSS for smooth scrolling effect */
-@keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
+/* Default width for mobile screens */
+.dynamic-logo {
+    width: 160px; /* Default width for mobile screens */
+  }
+  
+  /* Width for tablet screens */
+  @media (min-width: 768px) {
+    .dynamic-logo {
+      width: 120px; /* Width for medium screens (tablet view) */
     }
   }
   
-  .relative {
-    position: relative;
-  }
-  
-  .absolute {
-    position: absolute;
+  /* Width for larger screens */
+  @media (min-width: 1024px) {
+    .dynamic-logo {
+      width: var(--logo-width, 120px); /* Dynamic width for large screens */
+    }
   }
   
