@@ -34,7 +34,8 @@ export default function Home() {
         <HeroSection />
       </div>
       <div ref={section2Ref}>
-        <AboutSection />
+        <AboutSection 
+        section3Ref={section3Ref} />
       </div>
       <div ref={section3Ref}>
         <ServicesSection />
@@ -49,7 +50,9 @@ export default function Home() {
         <ContactSection />
       </div>
       <div ref={footerRef}> {/* Wrap ContactSection with ref */}
-        <Footer/>
+        <Footer
+        contactSectionRef={contactSectionRef}
+        />
       </div>
     </>
   );

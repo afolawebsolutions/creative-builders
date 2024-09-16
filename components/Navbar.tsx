@@ -133,6 +133,10 @@ export default function Navbar({
     }
   };
 
+  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
     return () => {
@@ -160,11 +164,8 @@ export default function Navbar({
               className="bg-[#11ae6070] rounded-full px-6 py-3 flex items-center justify-around lg:w-[70%] md:w-fit space-x-2"
               style={{ backgroundColor: barBackground }}
             >
-              <a href="#section1" className="hover:underline text-[18px]">
-                Home
-              </a>
-              <a href="#section2" className="hover:underline text-[18px]">
-                About
+              <a onClick={() => scrollToSection(section2Ref)} className="hover:underline text-[18px]">
+                About us
               </a>
               <div className="relative">
                 <button
@@ -196,19 +197,23 @@ export default function Navbar({
                   </div>
                 )}
               </div>
-              <a href="#section4" className="hover:underline text-[18px]">
-                Contact
+              <a onClick={() => scrollToSection(section4Ref)} className="hover:underline text-[18px]">
+                Portfolio
               </a>
-              <a href="#section4" className="hover:underline text-[18px]">
-                Contact
+              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[18px]">
+                Testimonial
+              </a>
+              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[18px]">
+                Partners
               </a>
             </div>
           </div>
 
           <button
+          onClick={() => scrollToSection(contactSectionRef)}
             className={`${buttonColor} text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2`}
           >
-            <span className="hidden lg:flex">{buttonIcon}</span>
+            <span className="hidden lg:flex pr-2">{buttonIcon}</span>
             {buttonText}
           </button>
 
@@ -226,11 +231,8 @@ export default function Navbar({
 
         {isMenuOpen && (
           <div className="md:hidden mt-4 bg-[#59868b] rounded-lg p-4 max-h-[90vh] overflow-y-auto">
-            <a href="#section1" className="block py-2 hover:bg-[#23707A] px-2">
-              Home
-            </a>
-            <a href="#section2" className="block py-2 hover:bg-[#23707A] px-2">
-              About
+            <a onClick={() => scrollToSection(section2Ref)} className="block py-2 hover:bg-[#23707A] px-2">
+              About us
             </a>
             <div>
               <button
@@ -262,10 +264,17 @@ export default function Navbar({
               </div>
               )}
             </div>
-            <a href="#section4" className="block py-2 hover:bg-[#23707A] px-2">
-              Contact
+            <a onClick={() => scrollToSection(section4Ref)} className="block py-2 hover:bg-[#23707A] px-2">
+              Portfolio
+            </a>
+            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#23707A] px-2">
+              Testimonial
+            </a>
+            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#23707A] px-2">
+              Partners
             </a>
             <button
+            onClick={() => scrollToSection(contactSectionRef)}
             className={`${buttonColor} text-gray-950 text-[14px] px-20 py-2 rounded-full  flex items-center space-x-2`}
           >
             {buttonIcon}

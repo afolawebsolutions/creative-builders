@@ -1,13 +1,24 @@
 import Image from 'next/image';
 import { Fira_Code } from 'next/font/google';
-import { forwardRef } from 'react';
+import { forwardRef, RefObject } from 'react';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '700'],
 });
 
-const Footer = forwardRef<HTMLDivElement>((props, ref) => {
+interface FooterProps {
+
+  contactSectionRef : RefObject<HTMLDivElement>;
+
+}
+
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, ref)=>{
+
+    const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
   return (
     <footer ref={ref} className={`${firaCode.className} bg-[#23707A] text-white py-12 px-6 md:px-[7%] lg:py-[5%] `}>
       <div className="max-w-[1400px] mx-auto">
@@ -19,7 +30,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => {
               to launch and scale<br />
               simple and extensive projects.
             </p>
-            <button className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-[12px] md:text-[16px] font-[20] flex items-center transition-colors hover:bg-[#1ea34e] w-fit  ">
+            <button onClick={() => scrollToSection(contactSectionRef)} className="bg-[#22c55e] text-white px-2 py-2 rounded-full text-[12px] md:text-[16px] font-[20] flex items-center transition-colors hover:bg-[#1ea34e] w-fit  ">
               Build with us
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path

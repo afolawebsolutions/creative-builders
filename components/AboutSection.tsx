@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Poppins, Fira_Code } from 'next/font/google';
-import { forwardRef } from 'react';
+import { forwardRef, RefObject } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const poppins = Poppins({
@@ -14,9 +14,18 @@ const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '700'],
 });
+interface AboutProps {
+
+  section3Ref: RefObject<HTMLDivElement>;
+
+}
 
 // Using forwardRef to accept and forward a ref
-const AboutSection = forwardRef<HTMLDivElement>((props, ref) => {
+const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, ref)=>{
+  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section
       id='aboutme'
@@ -46,7 +55,7 @@ const AboutSection = forwardRef<HTMLDivElement>((props, ref) => {
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
         <div className='flex justify-center md:justify-start'>
-        <button className={`${poppins.className} bg-[#00A85A] flex items-center text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
+        <button onClick={() => scrollToSection(section3Ref)} className={`${poppins.className} bg-[#00A85A] flex items-center text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
   Our Services
   <ArrowDown/>
 </button>
