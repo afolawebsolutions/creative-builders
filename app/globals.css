@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global CSS for smooth scrolling effect */
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
