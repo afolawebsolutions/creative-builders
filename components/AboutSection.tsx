@@ -64,6 +64,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
 
         </div>
       </div>
+      
     </section>
     <Partners/>
     </>
