@@ -16,7 +16,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     phone: "",
     organization: "",
     description: "",
-    value: "",
+    aim: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,7 +41,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
           phone: formData.phone,
           organization: formData.organization,
           description: formData.description,
-          value: formData.value,
+          aim: formData.aim,
         },
         userID
 
@@ -54,7 +54,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
         phone: "",
         organization: "",
         description: "",
-        value: "",
+        aim: "",
       });
     } catch (error) {
       console.error("Failed to send the message:", error);
@@ -150,7 +150,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 placeholder="What value do you aim to achieve with us?"
                 rows={2}
                 className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                value={formData.value}
+                value={formData.aim}
                 onChange={handleChange}
                 required
               ></textarea>
