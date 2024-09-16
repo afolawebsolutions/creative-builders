@@ -146,7 +146,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 required
               ></textarea>
               <textarea
-                name="value"
+                name="aim"
                 placeholder="What value do you aim to achieve with us?"
                 rows={2}
                 className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
