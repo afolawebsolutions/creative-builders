@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Fira_Code } from 'next/font/google';
 
 const partners = [
   { image: "/Assets/Asset 9 1.svg", name: "Partner 1" },
@@ -10,13 +11,17 @@ const partners = [
   { image: "/Assets/Asset 9 1.svg", name: "Partner 5" },
 ];
 
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 export default function Partners() {
   return (
-    <section className="py-8  overflow-hidden relative">
-      <h2 className="text-center mb-8 text-4xl font-bold text-[#2A9D8F] py-6">
+    <section className="py-12 bg-[#fdf9d1cb] overflow-hidden relative mb-2">
+      <h2 className={`${firaCode.className} text-center mb-[20px] text-4xl font-extralight text-[#23707A] `}>
         Partners
       </h2>
-      <div className="wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden ">
+      <div className="wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden pb-6 ">
         {/* Scrolling container */}
         <div className="flex animate-scrollLeft ">
           {[...partners, ...partners].map((partner, index) => (
