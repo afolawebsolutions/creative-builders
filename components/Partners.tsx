@@ -1,18 +1,21 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 const partners = [
-  { image: '/Assets/Asset 9 1.svg', name: 'Partner 1' },
-  { image: '/Assets/Asset 9 1.svg', name: 'Partner 2' },
-  { image: '/Assets/Asset 9 1.svg', name: 'Partner 3' },
-  { image: '/Assets/Asset 9 1.svg', name: 'Partner 4' },
-  { image: '/Assets/Asset 9 1.svg', name: 'Partner 5' },
+  { image: "/Assets/Asset 9 1.svg", name: "Partner 1" },
+  { image: "/Assets/Asset 9 1.svg", name: "Partner 2" },
+  { image: "/Assets/Asset 9 1.svg", name: "Partner 3" },
+  { image: "/Assets/Asset 9 1.svg", name: "Partner 4" },
+  { image: "/Assets/Asset 9 1.svg", name: "Partner 5" },
 ];
 
 export default function Partners() {
   return (
     <section className="py-16 bg-[#FDF9D1] overflow-hidden relative">
+      <h2 className="text-center mb-4 text-4xl font-bold text-[#2A9D8F]">
+        Partners
+      </h2>
       <div className="wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden ">
         {/* Scrolling container */}
         <div className="flex animate-scrollLeft ">
