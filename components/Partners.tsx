@@ -12,8 +12,8 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="py-16 bg-[#FDF9D1] overflow-hidden relative">
-      <h2 className="text-center mb-4 text-4xl font-bold text-[#2A9D8F]">
+    <section className="py-8  overflow-hidden relative">
+      <h2 className="text-center mb-8 text-4xl font-bold text-[#2A9D8F] py-6">
         Partners
       </h2>
       <div className="wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden ">
