@@ -39,9 +39,9 @@ export default function Home() {
         <AboutSection 
         section3Ref={section3Ref} />
       </div>
-      {/* <div>
+      <div>
         <Partners/>
-      </div> */}
+      </div>
       <div ref={section3Ref}>
         <ServicesSection />
       </div>

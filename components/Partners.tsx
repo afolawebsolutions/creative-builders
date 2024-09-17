@@ -12,41 +12,36 @@ const partners = [
 ];
 
 export default function Partners() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  // const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  // useEffect(() => {
+  //   const scrollContainer = scrollRef.current;
+  //   if (!scrollContainer) return;
 
-    const scrollWidth = scrollContainer.scrollWidth / 2;
-    let scrollAmount = 0;
-    
-    const scroll = () => {
-      scrollAmount += 1; // Adjust speed here
-      if (scrollAmount >= scrollWidth) {
-        scrollAmount = 0;
-      }
-      scrollContainer.scrollLeft = scrollAmount;
-    };
+  //   let scrollPosition = 0;
 
-    const scrollInterval = setInterval(scroll, 20); // Adjust smoothness here
+  //   const scroll = () => {
+  //     scrollPosition += 1; // Adjust speed here for smoothness
 
-    return () => clearInterval(scrollInterval);
-  }, []);
+  //     // Reset position to create infinite scroll illusion
+  //     if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+  //       scrollPosition = 0; // Reset to start when halfway done
+  //     }
+
+  //     scrollContainer.scrollLeft = scrollPosition;
+  //   };
+
+  //   const scrollInterval = setInterval(scroll, 20); // Speed and smoothness
+
+  //   return () => clearInterval(scrollInterval);
+  // }, []);
 
   return (
     <section className="py-16 bg-[#FDF9D1] overflow-hidden relative" aria-labelledby="partners-heading">
-      {/* The absolute heading overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        {/* <h2 id="partners-heading" className="bg-[#FDF9D1] px-2 py-2 text-4xl font-bold text-[#2A9D8F]">
-          Partners
-        </h2> */}
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Scrolling container */}
         <div
-          ref={scrollRef}
+          // ref={scrollRef}
           className="flex overflow-x-hidden whitespace-nowrap"
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
