@@ -24,9 +24,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const serviceID = "service_0g7r5a9";
-    const templateID = "template_xb61efv";
-    const userID = "6MXB5_tSvvvLBqgl5";
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
     try {
       await emailjs.send(
