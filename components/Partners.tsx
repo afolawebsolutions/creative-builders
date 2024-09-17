@@ -37,10 +37,10 @@ export default function Partners() {
   return (
     <section className="py-16 bg-[#FDF9D1] overflow-hidden relative" aria-labelledby="partners-heading">
       {/* The absolute heading overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
-        <h2 id="partners-heading" className="bg-[#FDF9D1] px-2 py-2 text-4xl font-bold text-[#2A9D8F]">
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        {/* <h2 id="partners-heading" className="bg-[#FDF9D1] px-2 py-2 text-4xl font-bold text-[#2A9D8F]">
           Partners
-        </h2>
+        </h2> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
