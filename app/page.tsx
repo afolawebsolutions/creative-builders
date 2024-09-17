@@ -19,7 +19,8 @@ export default function Home() {
   const section4Ref = useRef<HTMLDivElement>(null);
   const reviewsSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null); // Ref for ContactSection
+  const footerRef = useRef<HTMLDivElement>(null); // Ref for 
+
 
   return (
     <>
