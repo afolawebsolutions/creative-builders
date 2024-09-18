@@ -1,14 +1,13 @@
 "use client"; // Ensure this is a client component
 
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { CornerDownRight } from "lucide-react";
 import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster, toast } from "sonner";
 
 const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
+  // Initial state with default values
   const [formData, setFormData] = useState({
     firstname: "",
     surname: "",
@@ -16,19 +15,31 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     phone: "",
     organization: "",
     description: "",
-    value: "",
+    aim: "",
   });
 
+  // Retrieve saved form data from localStorage when the component mounts
+  useEffect(() => {
+    const savedData = localStorage.getItem("contactFormData");
+    if (savedData) {
+      setFormData(JSON.parse(savedData)); // Parse the saved JSON and set it to formData
+    }
+  }, []); // This will run only once when the component mounts
+
+  // Save form data in localStorage whenever a field is changed
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const updatedFormData = { ...formData, [e.target.name]: e.target.value };
+    setFormData(updatedFormData);
+    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData)); // Save updated data to localStorage
   };
 
+  // Handle form submission and clear form data from localStorage
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // const serviceID = "service_bznlphy";
-    // const templateID = "template_ox7g9cq";
-    // const userID = "_4lSuctybktBQ9OET";
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
     try {
       await emailjs.send(
@@ -41,12 +52,13 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
           phone: formData.phone,
           organization: formData.organization,
           description: formData.description,
-          value: formData.value,
+          aim: formData.aim,
         },
         userID
-
       );
       toast.success("Your message has been sent successfully!");
+
+      // Clear the form and remove data from localStorage after submission
       setFormData({
         firstname: "",
         surname: "",
@@ -54,8 +66,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
         phone: "",
         organization: "",
         description: "",
-        value: "",
+        aim: "",
       });
+      localStorage.removeItem("contactFormData"); // Remove data from localStorage
     } catch (error) {
       console.error("Failed to send the message:", error);
       toast.error("Failed to send the message. Please try again later.");
@@ -146,11 +159,11 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 required
               ></textarea>
               <textarea
-                name="value"
+                name="aim"
                 placeholder="What value do you aim to achieve with us?"
                 rows={2}
                 className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                value={formData.value}
+                value={formData.aim}
                 onChange={handleChange}
                 required
               ></textarea>
@@ -162,18 +175,19 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 Submit
               </button>
             </form>
-            <div className="absolute -bottom-[-200px] md:-bottom-[-180px] lg:-left-[8rem] md:-left-[4rem] w-56 h-56 lg:w-48 lg:h-48">
+            <div className="absolute -bottom-[-200px] md:-bottom-[-80px] lg:-left-[7.6rem] md:-left-[5rem] w-56 h-56 lg:w-48 lg:h-48">
             <Image
                 src="/Assets/Contact Us 1.png"
                 alt="Person carrying envelope"
-                width={500}
-                height={500}
-                className="w-[100%] h-[350px] hidden md:block"
+                width={700}
+                height={400}
+                className="w-[100%] max-h-[350px] hidden md:block"
               />
             </div>
           </div>
         </div>
       </div>
+      <Toaster closeButton />
     </section>
   );
 });

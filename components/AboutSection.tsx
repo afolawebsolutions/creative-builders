@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Poppins, Fira_Code } from 'next/font/google';
 import { forwardRef, RefObject } from 'react';
 import { ArrowDown } from 'lucide-react';
-import Partners from './Partners';
+
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -64,9 +64,8 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
 
         </div>
       </div>
-      
+    
     </section>
-    <Partners/>
     </>
   );
 });

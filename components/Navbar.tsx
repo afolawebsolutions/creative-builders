@@ -26,6 +26,7 @@ const ArrowInBagIcon = () => (
 
 
 export default function Navbar({
+  section1Ref,
   section2Ref,
   section3Ref,
   section4Ref,
@@ -43,17 +44,19 @@ export default function Navbar({
   const [buttonText, setButtonText] = useState(" Work with us");
   const [buttonColor, setButtonColor] = useState("bg-[#FDF9D1]");
   const [buttonIcon, setButtonIcon] = useState(<ArrowInBagIcon/>);
+  const [paddingValue, setPaddingValue] = useState(20);
 
   const handleScroll = () => {
-    const section2Top = (section2Ref.current?.offsetTop ?? 0) - 80;
-    const section3Top = (section3Ref.current?.offsetTop ?? 0) - 80;
-    const section4Top = (section4Ref.current?.offsetTop ?? 0) - 90;
+    const section1Top = (section1Ref.current?.offsetTop ?? 0)
+    const section2Top = (section2Ref.current?.offsetTop ?? 0) - 72;
+    const section3Top = (section3Ref.current?.offsetTop ?? 0) - 72;
+    const section4Top = (section4Ref.current?.offsetTop ?? 0) - 70;
     const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
-    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 90;
-    const footerTop = (footerRef.current?.offsetTop ?? 0) - 90;
+    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 80;
+    const footerTop = (footerRef.current?.offsetTop ?? 0) - 75;
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition < section2Top) {
+    if (scrollPosition === section1Top) {
       // Section 1
       setNavbarBackground("#23707A");
       setBarBackground("#11ae6070");
@@ -63,7 +66,20 @@ export default function Navbar({
       setLogoWidth(200);
       setLogoHeight(10);
       setButtonIcon(<ArrowInBagIcon/>)
-    } else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
+      setPaddingValue(20)
+    }else if (scrollPosition < section2Top) {
+      // Section 1
+      setNavbarBackground("#23707A");
+      setBarBackground("#11ae6070");
+      setLogoSrc("/Assets/Asset 10 2.svg");
+      setButtonColor("bg-[#FDF9D1] text-black");
+      setButtonText(" Work with us");
+      setLogoWidth(120);
+      setLogoHeight(10);
+      setButtonIcon(<ArrowInBagIcon/>)
+      setPaddingValue(6)
+    } 
+    else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
       // Section 2
       setNavbarBackground("#7EACB5");
       setBarBackground("#7EACB5");
@@ -73,6 +89,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
       // Section 3
       setNavbarBackground("#7EACB5");
@@ -83,6 +100,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     } else if (
       scrollPosition >= section4Top &&
       scrollPosition < reviewsSectionTop
@@ -95,6 +113,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     } else if (
       scrollPosition >= reviewsSectionTop &&
       scrollPosition < contactSectionTop
@@ -108,6 +127,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     } else if (
       scrollPosition >= contactSectionTop &&
       scrollPosition < footerTop
@@ -121,6 +141,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     } else {
       setNavbarBackground("#23707A");
       setBarBackground("#23707A");
@@ -130,6 +151,7 @@ export default function Navbar({
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<Phone/>)
+      setPaddingValue(6)
     }
   };
 
@@ -150,7 +172,7 @@ export default function Navbar({
         className="fixed w-full text-white z-50 transition-colors duration-500 pt-5 md:pt-0"
         style={{ backgroundColor: navbarBackground }}
       >
-        <div className="mx-auto flex md:justify-around justify-between items-center p-2 md:p-4 md:px-[5%]">
+        <div className="md-lg-dynamic-padding mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
           {/* Logo */}
           <Image
             src={logoSrc}
@@ -278,7 +300,7 @@ export default function Navbar({
             </a>
             <button
             onClick={() => scrollToSection(contactSectionRef)}
-            className={`${buttonColor} text-gray-950 text-[14px] px-20 py-2 rounded-full  flex items-center space-x-2`}
+            className={`${buttonColor} text-gray-950 text-[18px] px-20 py-2 rounded-full  flex items-center space-x-2`}
           >
             {buttonIcon}
             <span>{buttonText}</span>

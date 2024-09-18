@@ -10,6 +10,7 @@ import WorksSection from '@/components/WorksSection';
 import ReviewsSection from '@/components/ReviewSection';
 import ContactSection from '@/components/ContactSection'; // Import the ContactSection
 import Footer from '@/components/Footer';
+import Partners from '@/components/Partners';
 
 export default function Home() {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -18,7 +19,8 @@ export default function Home() {
   const section4Ref = useRef<HTMLDivElement>(null);
   const reviewsSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null); // Ref for ContactSection
+  const footerRef = useRef<HTMLDivElement>(null); // Ref for 
+
 
   return (
     <>
@@ -37,6 +39,9 @@ export default function Home() {
       <div ref={section2Ref}>
         <AboutSection 
         section3Ref={section3Ref} />
+      </div>
+      <div>
+        <Partners/>
       </div>
       <div ref={section3Ref}>
         <ServicesSection />
