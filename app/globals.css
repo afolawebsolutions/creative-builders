@@ -12,12 +12,18 @@
     .dynamic-logo {
       width: 120px; /* Width for medium screens (tablet view) */
     }
+    .md-lg-dynamic-padding {
+      padding: var(--md-lg-padding, 18px);
+    }
   }
   
   /* Width for larger screens */
   @media (min-width: 1024px) {
     .dynamic-logo {
       width: var(--logo-width, 120px); /* Dynamic width for large screens */
+    }
+    .md-lg-dynamic-padding {
+      padding: var(--md-lg-padding, 18px);
     }
   }
   

@@ -17,8 +17,8 @@ const firaCode = Fira_Code({
 });
 export default function Partners() {
   return (
-    <section className="py-12 bg-[#fdf9d1cb] overflow-hidden relative mb-2">
-      <h2 className={`${firaCode.className} text-center mb-[20px] text-4xl font-extralight text-[#23707A] `}>
+    <section className="py-5 bg-[#fdf9d1cb] overflow-hidden relative mb-2">
+      <h2 className={`${firaCode.className} text-center mb-[20px] text-3xl font-extralight text-[#23707A] `}>
         Partners
       </h2>
       <div className="wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden pb-6 ">
@@ -29,9 +29,9 @@ export default function Partners() {
               <Image
                 src={partner.image}
                 alt={partner.name}
-                width={200}
+                width={150}
                 height={50}
-                className="w-auto h-12 object-contain"
+                className="w-auto h-9 object-contain"
               />
             </div>
           ))}

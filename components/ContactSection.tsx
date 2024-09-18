@@ -160,13 +160,13 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 Submit
               </button>
             </form>
-            <div className="absolute -bottom-[-200px] md:-bottom-[-180px] lg:-left-[8rem] md:-left-[4rem] w-56 h-56 lg:w-48 lg:h-48">
+            <div className="absolute -bottom-[-200px] md:-bottom-[-80px] lg:-left-[7.6rem] md:-left-[5rem] w-56 h-56 lg:w-48 lg:h-48">
             <Image
                 src="/Assets/Contact Us 1.png"
                 alt="Person carrying envelope"
-                width={500}
-                height={500}
-                className="w-[100%] h-[350px] hidden md:block"
+                width={700}
+                height={400}
+                className="w-[100%] max-h-[350px] hidden md:block"
               />
             </div>
           </div>
