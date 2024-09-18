@@ -1,12 +1,13 @@
 "use client"; // Ensure this is a client component
 
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { CornerDownRight } from "lucide-react";
 import emailjs from "emailjs-com";
-import { Toaster, toast} from 'sonner';
+import { Toaster, toast } from "sonner";
 
 const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
+  // Initial state with default values
   const [formData, setFormData] = useState({
     firstname: "",
     surname: "",
@@ -17,10 +18,22 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     aim: "",
   });
 
+  // Retrieve saved form data from localStorage when the component mounts
+  useEffect(() => {
+    const savedData = localStorage.getItem("contactFormData");
+    if (savedData) {
+      setFormData(JSON.parse(savedData)); // Parse the saved JSON and set it to formData
+    }
+  }, []); // This will run only once when the component mounts
+
+  // Save form data in localStorage whenever a field is changed
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const updatedFormData = { ...formData, [e.target.name]: e.target.value };
+    setFormData(updatedFormData);
+    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData)); // Save updated data to localStorage
   };
 
+  // Handle form submission and clear form data from localStorage
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -42,9 +55,10 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
           aim: formData.aim,
         },
         userID
-
       );
       toast.success("Your message has been sent successfully!");
+
+      // Clear the form and remove data from localStorage after submission
       setFormData({
         firstname: "",
         surname: "",
@@ -54,6 +68,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
         description: "",
         aim: "",
       });
+      localStorage.removeItem("contactFormData"); // Remove data from localStorage
     } catch (error) {
       console.error("Failed to send the message:", error);
       toast.error("Failed to send the message. Please try again later.");
