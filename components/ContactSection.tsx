@@ -58,7 +58,6 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
       );
       toast.success("Your message has been sent successfully!");
 
-      // Clear the form and remove data from localStorage after submission
       setFormData({
         firstname: "",
         surname: "",
@@ -68,7 +67,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
         description: "",
         aim: "",
       });
-      localStorage.removeItem("contactFormData"); // Remove data from localStorage
+      localStorage.removeItem("contactFormData"); 
     } catch (error) {
       console.error("Failed to send the message:", error);
       toast.error("Failed to send the message. Please try again later.");
