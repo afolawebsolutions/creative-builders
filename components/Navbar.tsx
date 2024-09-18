@@ -172,7 +172,7 @@ export default function Navbar({
         className="fixed w-full text-white z-50 transition-colors duration-500 pt-5 md:pt-0"
         style={{ backgroundColor: navbarBackground }}
       >
-        <div className="md-lg-dynamic-padding mx-auto flex md:justify-around justify-between items-center px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
+        <div className="md-lg-dynamic-padding mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
           {/* Logo */}
           <Image
             src={logoSrc}
