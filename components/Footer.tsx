@@ -56,11 +56,11 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
           </div>
 
           
-          <div className="flex md:flex-row flex-col flex-wrap justify-around w-full ">
+          <div className="flex flex-row gap-8 flex-wrap md:justify-around w-full">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
                 <h3 className="text-[#FF00A1] font-medium text-[22px] my-5">{category}</h3>
-                <ul className="space-y-7 font-[12] text-[12px] text-gray-200">
+                <ul className="md:space-y-7 space-y-4 font-[12] text-[12px] text-gray-200">
                   {getLinksForCategory(category).map((link) => (
                     <li key={link}>{link}</li>
                   ))}
