@@ -49,11 +49,11 @@ export default function Home() {
       <div ref={section4Ref}>
         <WorksSection />
       </div>
-      <div ref={reviewsSectionRef}>
-        <ReviewsSection />
-      </div>
       <div ref={contactSectionRef}> {/* Wrap ContactSection with ref */}
         <ContactSection />
+      </div>
+      <div ref={reviewsSectionRef}>
+        <ReviewsSection />
       </div>
       <div ref={footerRef}> {/* Wrap ContactSection with ref */}
         <Footer
