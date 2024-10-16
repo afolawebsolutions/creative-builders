@@ -28,40 +28,42 @@ const ArrowInBagIcon = () => (
 export default function Navbar({
   section1Ref,
   section2Ref,
-  section3Ref,
+ 
   section4Ref,
   reviewsSectionRef,
   contactSectionRef,
-  footerRef,
+
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [navbarBackground, setNavbarBackground] = useState("#23707A");
-  const [barBackground, setBarBackground] = useState("#11ae6070");
-  const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 2.svg");
+  const [navbarBackground, setNavbarBackground] = useState("#2E1F30");
+  const [barBackground, setBarBackground] = useState("#4A2D4E");
+  const [logoSrc, setLogoSrc] = useState("/Assets/Asset 10 1.svg");
   const [logoWidth, setLogoWidth] = useState(200);
   const [logoHeight, setLogoHeight] = useState(10);
   const [buttonText, setButtonText] = useState(" Work with us");
-  const [buttonColor, setButtonColor] = useState("bg-[#FDF9D1]");
+  const [buttonColor, setButtonColor] = useState("bg-[#6BBD00] text-black");
+  const [fontColor, setfontColor] = useState("#FFFFFF");
   const [buttonIcon, setButtonIcon] = useState(<ArrowInBagIcon/>);
   const [paddingValue, setPaddingValue] = useState(20);
 
   const handleScroll = () => {
     const section1Top = (section1Ref.current?.offsetTop ?? 0)
     const section2Top = (section2Ref.current?.offsetTop ?? 0) - 72;
-    const section3Top = (section3Ref.current?.offsetTop ?? 0) - 72;
-    const section4Top = (section4Ref.current?.offsetTop ?? 0) - 70;
-    const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
-    const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 80;
-    const footerTop = (footerRef.current?.offsetTop ?? 0) - 75;
+    // const section3Top = (section3Ref.current?.offsetTop ?? 0) - 72;
+    // const section4Top = (section4Ref.current?.offsetTop ?? 0) - 70;
+    // const reviewsSectionTop = (reviewsSectionRef.current?.offsetTop ?? 0) - 80;
+    // const contactSectionTop = (contactSectionRef.current?.offsetTop ?? 0) - 80;
+    // const footerTop = (footerRef.current?.offsetTop ?? 0) - 75;
     const scrollPosition = window.scrollY;
 
     if (scrollPosition === section1Top) {
       // Section 1
-      setNavbarBackground("#23707A");
-      setBarBackground("#11ae6070");
+      setNavbarBackground("#2E1F30");
+      setBarBackground("#4A2D4E");
+      setfontColor("#FFFFFF")
       setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-[#FDF9D1] text-black");
+      setButtonColor("bg-[#6BBD00] text-black");
       setButtonText(" Work with us");
       setLogoWidth(200);
       setLogoHeight(10);
@@ -69,84 +71,23 @@ export default function Navbar({
       setPaddingValue(20)
     }else if (scrollPosition < section2Top) {
       // Section 1
-      setNavbarBackground("#23707A");
-      setBarBackground("#11ae6070");
+      setNavbarBackground("#2E1F30");
+      setBarBackground("#4A2D4E");
       setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-[#FDF9D1] text-black");
+      setButtonColor("bg-[#6BBD00] text-black");
+      setfontColor("#FFFFFF")
       setButtonText(" Work with us");
       setLogoWidth(120);
       setLogoHeight(10);
       setButtonIcon(<ArrowInBagIcon/>)
       setPaddingValue(6)
     } 
-    else if (scrollPosition >= section2Top && scrollPosition < section3Top) {
-      // Section 2
-      setNavbarBackground("#7EACB5");
-      setBarBackground("#7EACB5");
+ else {
+      setNavbarBackground("#FFFFFF");
+      setBarBackground("#FFFFFF");
       setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white");
-      setButtonText(" Book a call");
-      setLogoWidth(120);
-      setLogoHeight(10);
-      setButtonIcon(<Phone/>)
-      setPaddingValue(6)
-    } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
-      // Section 3
-      setNavbarBackground("#7EACB5");
-      setBarBackground("#7EACB5");
-      setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white");
-      setButtonText(" Book a call");
-      setLogoWidth(120);
-      setLogoHeight(10);
-      setButtonIcon(<Phone/>)
-      setPaddingValue(6)
-    } else if (
-      scrollPosition >= section4Top &&
-      scrollPosition < reviewsSectionTop
-    ) {
-      setNavbarBackground("#23707A");
-      setBarBackground("#23707A");
-      setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-[#00A85A] text-white");
-      setButtonText(" Book a call");
-      setLogoWidth(120);
-      setLogoHeight(10);
-      setButtonIcon(<Phone/>)
-      setPaddingValue(6)
-    } else if (
-      scrollPosition >= reviewsSectionTop &&
-      scrollPosition < contactSectionTop
-    ) {
-      // Contact Section
-      setNavbarBackground("#7EACB5");
-      setBarBackground("#7EACB5");
-      setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white");
-      setButtonText(" Book a call");
-      setLogoWidth(120);
-      setLogoHeight(10);
-      setButtonIcon(<Phone/>)
-      setPaddingValue(6)
-    } else if (
-      scrollPosition >= contactSectionTop &&
-      scrollPosition < footerTop
-    ) {
-      // Contact Section
-      setNavbarBackground("#7EACB5");
-      setBarBackground("#7EACB5");
-      setLogoSrc("/Assets/Asset 9 1.svg");
-      setButtonColor("bg-[#00A85A] text-white");
-      setButtonText(" Book a call");
-      setLogoWidth(120);
-      setLogoHeight(10);
-      setButtonIcon(<Phone/>)
-      setPaddingValue(6)
-    } else {
-      setNavbarBackground("#23707A");
-      setBarBackground("#23707A");
-      setLogoSrc("/Assets/Asset 10 2.svg");
-      setButtonColor("bg-[#00A85A] text-white");
+      setButtonColor("bg-[#FFFFFF] text-[#6BBD00]");
+      setfontColor("#374151")
       setButtonText(" Book a call");
       setLogoWidth(120);
       setLogoHeight(10);
@@ -169,8 +110,8 @@ export default function Navbar({
   return (
     <>
       <nav
-        className="fixed w-full text-white z-50 transition-colors duration-500 pt-5 md:pt-0"
-        style={{ backgroundColor: navbarBackground }}
+        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-0"
+        style={{ backgroundColor: navbarBackground, color: fontColor }}
       >
         <div className="md-lg-dynamic-padding mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
           {/* Logo */}
@@ -186,57 +127,57 @@ export default function Navbar({
 
           <div className="hidden md:flex items-center justify-center flex-grow">
             <div
-              className="bg-[#11ae6070] rounded-full px-6 py-3 flex items-center justify-around lg:w-[70%] md:w-fit space-x-2"
+              className="rounded-full px-6 py-3 flex items-center justify-around lg:w-[70%] md:w-fit space-x-2"
               style={{ backgroundColor: barBackground }}
             >
-              <a onClick={() => scrollToSection(section2Ref)} className="hover:underline text-[18px]">
-                About <span className="md:hidden">us</span>
+              <a onClick={() => scrollToSection(section2Ref)} className="hover:underline text-[14px]">
+                About <span className="md:hidden ">us</span>
               </a>
               <div className="relative">
                 <button
-                  className="hover:underline text-[18px] flex items-center"
+                  className="hover:underline flex items-center text-[14px]"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
-                  Services <ChevronDown className="ml-1 h-4 w-4" />
+                  Our Services <ChevronDown className="ml-1 h-4 w-4 " />
                 </button>
                 {isServicesOpen && (
-                  <div className="absolute top-full items-center mt-2 w-30 bg-[#59868b] shadow-lg py-2 z-10 border-[1px]">
+                  <div className="absolute top-full items-center mt-2 w-30 bg-[#4A2D4E] shadow-lg py-2 z-10 border-[1px]">
                     <a
                       href="#service1"
-                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30] text-[14px]"
                     >
                       Creative
                     </a>
                     <a
                       href="#service2"
-                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30] text-[14px]"
                     >
                       Development
                     </a>
                     <a
                       href="#service3"
-                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#3e8892]"
+                      className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30] text-[14px]"
                     >
                       Consulting
                     </a>
                   </div>
                 )}
               </div>
-              <a onClick={() => scrollToSection(section4Ref)} className="hover:underline text-[18px]">
+              <a onClick={() => scrollToSection(section4Ref)} className="hover:underline text-[14px]">
+                Careers
+              </a>
+              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[14px]">
                 Portfolio
               </a>
-              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[18px]">
-                Testimonial
-              </a>
-              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[18px]">
-                Partners
+              <a onClick={() => scrollToSection(reviewsSectionRef)} className="hover:underline text-[14px]">
+                Blog
               </a>
             </div>
           </div>
 
           <button
           onClick={() => scrollToSection(contactSectionRef)}
-            className={`${buttonColor} text-gray-950 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2`}
+            className={`${buttonColor} text-gray-800 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2 hover:bg-[#4cbd00e6]`}
           >
             <span className="hidden lg:flex pr-2">{buttonIcon}</span>
             {buttonText}
@@ -255,52 +196,52 @@ export default function Navbar({
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-[#59868b] rounded-lg p-4 max-h-[90vh] overflow-y-auto">
-            <a onClick={() => scrollToSection(section2Ref)} className="block py-2 hover:bg-[#23707A] px-2">
+          <div className="md:hidden mt-4 bg-[#2E1F30] rounded-lg p-4 max-h-[90vh] overflow-y-auto">
+            <a onClick={() => scrollToSection(section2Ref)} className="block py-2 text-gray-100 hover:bg-[#2E1F30] px-2">
               About us
             </a>
             <div>
               <button
-                className="flex items-center justify-between w-full py-2 px-2"
+                className="flex items-center justify-between w-full py-2 px-2 "
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
                 Services <ChevronDown className="h-4 w-4" />
               </button>
               {isServicesOpen && (
-                <div className=" w-30 bg-[#59868b] shadow-lg py-2 z-10 ">
+                <div className=" w-30 bg-[#2E1F30] shadow-lg py-2 z-10 ">
                 <a
                   href="#service1"
-                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30]"
                 >
                   Creative
                 </a>
                 <a
                   href="#service2"
-                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30]"
                 >
                   Development
                 </a>
                 <a
                   href="#service3"
-                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#23707A]"
+                  className="block px-4 py-2 text-sm text-white font-light hover:bg-[#2E1F30]"
                 >
                   Consulting
                 </a>
               </div>
               )}
             </div>
-            <a onClick={() => scrollToSection(section4Ref)} className="block py-2 hover:bg-[#23707A] px-2">
+            <a onClick={() => scrollToSection(section4Ref)} className="block py-2 hover:bg-[#2E1F30] px-2">
               Portfolio
             </a>
-            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#23707A] px-2">
+            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#2E1F30] px-2">
               Testimonial
             </a>
-            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#23707A] px-2">
+            <a onClick={() => scrollToSection(reviewsSectionRef)} className="block py-2 hover:bg-[#2E1F30] px-2">
               Partners
             </a>
             <button
             onClick={() => scrollToSection(contactSectionRef)}
-            className={`${buttonColor} text-gray-950 text-[18px] px-20 py-2 rounded-full  flex items-center space-x-2`}
+            className={`${buttonColor} text-gray-50 text-[18px] px-20 py-2 rounded-full  flex items-center space-x-2`}
           >
             {buttonIcon}
             <span>{buttonText}</span>
