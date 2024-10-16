@@ -20,7 +20,7 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
     };
 
   return (
-    <footer ref={ref} className={`${firaCode.className} bg-[#2E1F30] text-white py-12 px-6 md:px-[2%] lg:py-[3%] `}>
+    <footer ref={ref} className={`${firaCode.className} bg-[#2E1F30] text-white py-12 px-6 md:px-[2%] lg:py-[5%] `}>
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-start justify-center md:justify-start space-y-8 md:space-y-0 gap-9 lg:gap-[10%] lg:pb-8 lg:pt-3">
           <div className="flex flex-col items-center lg:items-start space-y-4 lg:w-1/4">
