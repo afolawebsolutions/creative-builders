@@ -44,7 +44,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
         />
       </div>
       <div className="md:w-1/2 md:pl-12">
-        <h2 className={`${firaCode.className} text-[#545c58] mb-4`}  style={{ fontSize: '15px' }}>
+        <h2 className={`${firaCode.className} text-[#FF00A1] mb-4`}  style={{ fontSize: '15px' }}>
           About Us
         </h2>
         <h1 
@@ -57,7 +57,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
         <div className='flex justify-center md:justify-start'>
-        <button onClick={() => scrollToSection(section3Ref)} className={`${poppins.className} bg-[#6BBD00] flex items-center text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#4cbd00e6] transition duration-300`}>
+        <button onClick={() => scrollToSection(section3Ref)} className={`${poppins.className} text-[#6BBD00] flex items-center bg-white text-sm font-normal py-3 px-5 rounded-xl border-2 border-[#6BBD00] hover:bg-slate-100 transition duration-300`}>
   Our Services
   <ArrowDown/>
 </button>
