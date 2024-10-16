@@ -1,6 +1,6 @@
 "use client";
 
-import { Archivo, Fira_Code } from 'next/font/google';
+import { Fira_Code } from 'next/font/google';
 import Image from 'next/image';
 import { forwardRef } from 'react';
 import { services } from '@/constants/Services'; // Update the path according to your directory structure
@@ -8,11 +8,6 @@ import { services } from '@/constants/Services'; // Update the path according to
 const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '700'],
-});
-
-const archivo = Archivo({
-  subsets: ['latin'],
-  weight: ['700', '900']
 });
 
 // Using forwardRef to accept and forward a ref
@@ -23,10 +18,10 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="bg-white p-8 md:p-16 lg:px-[10%] lg:mb-12"
     >
-      <h2 className={`${archivo.className} text-3xl md:text-5xl font-extrabold mb-4 text-center text-[#545c58]`}>
+      <h2 className={`${firaCode.className} text-lg md:text-xl font-normal mb-4 text-center text-[#FF00A1]`}>
         Our Services
       </h2>
-      <p className={`${firaCode.className} text-center mb-12 text-[#000000] text-xl`}>
+      <p className={`${firaCode.className} text-center mb-12 text-[#000000] text-base`}>
         Your all-in-one powerhouse to launch and scale simple and extensive projects.
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
