@@ -21,7 +21,7 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
               className="mix-blend-multiply w-full"
             />
           </div>
-          <div className="w-full md:w-[40%] bg-gray-200 rounded-[60px] p-6 pb-14">
+          <div className="w-full md:w-[40%] bg-[#2E1F30]  rounded-[60px] p-6 pb-14">
             <h3 className="text-3xl font-bold text-green-500 mb-6 ml-4">Reviews</h3>
             <div className="space-y-4">
               {reviews.map((review, index) => (
@@ -32,12 +32,12 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
                       alt={review.name}
                       width={48}
                       height={48}
-                      className="rounded-full mix-blend-multiply"
+                      className="rounded-full "
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[14px] md:text-[16px]">{review.name}</h4>
-                    <p className="text-gray-700 text-[12px] md:text-[14px]">
+                    <h4 className="font-bold text-white text-[14px] md:text-[16px]">{review.name}</h4>
+                    <p className="text-white text-[11px] md:text-[12px]">
                       {review.comment}
                     </p>
                   </div>

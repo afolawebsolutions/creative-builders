@@ -43,7 +43,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="hero"
       ref={ref}
-      className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
+      className="bg-[#2E1F30] text-white flex flex-col md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
     >
       <div className="md:w-1/2 sm:text-center pb-11">
         <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center pt-7">
