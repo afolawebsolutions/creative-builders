@@ -17,7 +17,7 @@ const firaCode = Fira_Code({
 });
 export default function Partners() {
   return (
-    <section className="py-5 bg-[#fdf9d1cb] overflow-hidden relative mb-2">
+    <section className="py-5 bg-white overflow-hidden relative mb-2">
       <h2 className={`${firaCode.className} text-center mb-[20px] text-3xl font-extralight text-[#23707A] `}>
         Partners
       </h2>
