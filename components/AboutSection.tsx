@@ -51,13 +51,13 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
           className={`${firaCode.className} text-[#545c58] leading-tight mb-6  `} 
           style={{ fontSize: 'clamp(2.5rem, 5vw, 70px)' }}
         >
-          Sky&apos;s the limit, we aim for the <span className="text-green-500">moon! </span>
+          Sky&apos;s the limit, we aim for the <span className="text-[#6BBD00]">moon! </span>
         </h1>
         <p className={`${poppins.className} text-[#000000] mb-8 leading-relaxed`} style={{ fontSize: 'clamp(1rem, 2vw, 15px)' }}>
           At Creative Builders, we believe in the power of creativity to transform ideas into impactful brands. Our mission is to craft unique, innovative solutions that elevate your brand, provide unique identities, and solution-oriented platforms to drive success.
         </p>
         <div className='flex justify-center md:justify-start'>
-        <button onClick={() => scrollToSection(section3Ref)} className={`${poppins.className} bg-[#00A85A] flex items-center text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#008c4a] transition duration-300`}>
+        <button onClick={() => scrollToSection(section3Ref)} className={`${poppins.className} bg-[#6BBD00] flex items-center text-white text-lg font-normal py-3 px-5 rounded-full hover:bg-[#4cbd00e6] transition duration-300`}>
   Our Services
   <ArrowDown/>
 </button>
