@@ -110,10 +110,10 @@ export default function Navbar({
   return (
     <>
       <nav
-        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-0"
+        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-0 mx-auto "
         style={{ backgroundColor: navbarBackground, color: fontColor }}
       >
-        <div className="md-lg-dynamic-padding mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
+        <div className=" mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
           {/* Logo */}
           <Image
             src={logoSrc}
@@ -177,7 +177,7 @@ export default function Navbar({
 
           <button
           onClick={() => scrollToSection(contactSectionRef)}
-            className={`${buttonColor} text-gray-800 text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2 hover:bg-[#4cbd00e6]`}
+            className={`${buttonColor}  text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2 border-[#6BBD00] border-2 hover:bg-[#4cbd00e6] hover:text-white`}
           >
             <span className="hidden lg:flex pr-2">{buttonIcon}</span>
             {buttonText}
