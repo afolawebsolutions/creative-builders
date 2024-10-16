@@ -8,7 +8,7 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section ref={ref} className="py-12 px-3 md:px-[5%] lg:px-[8%]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          What our <span className="text-green-500">client</span> have to say about us!
+          What our <span className="text-[#6BBD00]">client</span> have to say about us!
         </h2>
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-[60%] mb-8 md:mb-0">
@@ -22,7 +22,7 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
             />
           </div>
           <div className="w-full md:w-[40%] bg-[#2E1F30]  rounded-[60px] p-6 pb-14">
-            <h3 className="text-3xl font-bold text-green-500 mb-6 ml-4">Reviews</h3>
+            <h3 className="text-3xl font-bold text-[#6BBD00] mb-6 ml-4">Reviews</h3>
             <div className="space-y-4">
               {reviews.map((review, index) => (
                 <div key={index} className="flex items-start space-x-3">
