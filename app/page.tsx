@@ -11,6 +11,7 @@ import ReviewsSection from '@/components/ReviewSection';
 import ContactSection from '@/components/ContactSection'; // Import the ContactSection
 import Footer from '@/components/Footer';
 import Partners from '@/components/Partners';
+import FAQ from '@/components/Faq';
 
 export default function Home() {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -55,7 +56,8 @@ export default function Home() {
       <div ref={reviewsSectionRef}>
         <ReviewsSection />
       </div>
-      <div ref={footerRef}> {/* Wrap ContactSection with ref */}
+      <div ref={footerRef}>
+        <FAQ />
         <Footer
         contactSectionRef={contactSectionRef}
         />
