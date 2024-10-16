@@ -3,7 +3,7 @@
 import { useState, useRef, useImperativeHandle, forwardRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { works } from "@/constants/Works"; // Adjust path according to your project structure
 import { Poppins, Fira_Code } from "next/font/google";
 import "slick-carousel/slick/slick.css";
