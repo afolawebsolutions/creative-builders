@@ -78,9 +78,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section ref={ref} className="bg-white py-12 px-8 md:px-[5%] lg:px-[8%] flex flex-col md:flex-row">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Get in touch with our <span className="text-green-500">team</span>
+          Get in touch with our <span className="text-[#6BBD00]">team</span>
         </h2>
-        <p className="text-center text-black mb-12">
+        <p className="text-center text-gray-700 mb-12 text-[16px]">
           The all-in-one powerhouse team to help you launch & scale faster
         </p>
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
@@ -94,9 +94,9 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
               layout="responsive"
             />
           </div>
-          <div className="w-full lg:w-1/2 bg-gray-200 rounded-[80px] p-8 md:py-8 md:px-[15%] lg:px-[5%] relative">
-            <h3 className="md:text-2xl text-lg font-semibold mb-6 text-center font-cascadia">
-              Let&apos;s get to know <span className="text-teal-600">you</span>
+          <div className="w-full lg:w-1/2 bg-white rounded-[20px] p-8 md:py-8 md:px-[15%] lg:px-[5%] relative border border-gray-200 ">
+            <h3 className="text-gray-700 text-[14px] font-normal mb-6 text-center">
+              Let&apos;s build the next decade
             </h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -104,7 +104,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="text"
                   name="firstname"
                   placeholder="Firstname"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                  className="w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                   value={formData.firstname}
                   onChange={handleChange}
                   required
@@ -113,7 +113,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="text"
                   name="surname"
                   placeholder="Surname"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                   value={formData.surname}
                   onChange={handleChange}
                   required
@@ -124,7 +124,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -133,7 +133,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -143,16 +143,16 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 type="text"
                 name="organization"
                 placeholder="Name of Organization"
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                 value={formData.organization}
                 onChange={handleChange}
                 required
               />
               <textarea
                 name="description"
-                placeholder="Tell us more about your organization"
+                placeholder="Tell us more details about your business and the scope and project in mind."
                 rows={4}
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                className="w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                 value={formData.description}
                 onChange={handleChange}
                 required
@@ -161,14 +161,14 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 name="aim"
                 placeholder="What value do you aim to achieve with us?"
                 rows={2}
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
+                className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
                 value={formData.aim}
                 onChange={handleChange}
                 required
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white font-semibold text-lg py-3 rounded-[20px] hover:bg-green-600 transition duration-300 flex justify-center"
+                className="w-full bg-[#6BBD00] text-white font-semibold text-lg py-3 rounded-[20px] hover:bg-[#4cbd00e6] transition duration-300 flex justify-center"
               >
                 <CornerDownRight />
                 Submit
