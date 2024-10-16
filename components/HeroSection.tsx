@@ -76,9 +76,9 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           />
           <button
             type="submit"
-            className="bg-[#00A85A] md:h-[50px] h-[40px] text-white px-2 py-1 lg:px-4 rounded-full text-[12px] lg:text-[18px]"
+            className="bg-[#4A2D4E] md:h-[50px] h-[40px] text-white px-2 py-1 lg:px-4 rounded-xl text-[14px]"
           >
-            Start project <span className="font-bold">-&gt;</span>
+            Begin a project <span className="font-bold text-[14px]"> -&gt;</span>
           </button>
         </form>
       </div>
