@@ -1,13 +1,9 @@
-"use client"; // Ensure this is a client component
+"use client"
 
-import { forwardRef, useState, useEffect } from "react";
-import Image from "next/image";
-import { CornerDownRight } from "lucide-react";
-import emailjs from "emailjs-com";
-import { Toaster, toast } from "sonner";
+import { useState, useEffect } from "react"
+import Image from "next/image"
 
-const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
-  // Initial state with default values
+export default function Component() {
   const [formData, setFormData] = useState({
     firstname: "",
     surname: "",
@@ -16,95 +12,122 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     organization: "",
     description: "",
     aim: "",
-  });
+  })
 
-  // Retrieve saved form data from localStorage when the component mounts
   useEffect(() => {
-    const savedData = localStorage.getItem("contactFormData");
+    const savedData = localStorage.getItem("contactFormData")
     if (savedData) {
-      setFormData(JSON.parse(savedData)); // Parse the saved JSON and set it to formData
+      setFormData(JSON.parse(savedData))
     }
-  }, []); // This will run only once when the component mounts
+  }, [])
 
-  // Save form data in localStorage whenever a field is changed
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const updatedFormData = { ...formData, [e.target.name]: e.target.value };
-    setFormData(updatedFormData);
-    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData)); // Save updated data to localStorage
-  };
+    const updatedFormData = { ...formData, [e.target.name]: e.target.value }
+    setFormData(updatedFormData)
+    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData))
+  }
 
-  // Handle form submission and clear form data from localStorage
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-
-    try {
-      await emailjs.send(
-        serviceID!,
-        templateID!,
-        {
-          firstname: formData.firstname,
-          surname: formData.surname,
-          email: formData.email,
-          phone: formData.phone,
-          organization: formData.organization,
-          description: formData.description,
-          aim: formData.aim,
-        },
-        userID
-      );
-      toast.success("Your message has been sent successfully!");
-
-      setFormData({
-        firstname: "",
-        surname: "",
-        email: "",
-        phone: "",
-        organization: "",
-        description: "",
-        aim: "",
-      });
-      localStorage.removeItem("contactFormData"); 
-    } catch (error) {
-      console.error("Failed to send the message:", error);
-      toast.error("Failed to send the message. Please try again later.");
-    }
-  };
+    e.preventDefault()
+    // Implement your form submission logic here
+    console.log("Form submitted:", formData)
+    setFormData({
+      firstname: "",
+      surname: "",
+      email: "",
+      phone: "",
+      organization: "",
+      description: "",
+      aim: "",
+    })
+    localStorage.removeItem("contactFormData")
+  }
 
   return (
-    <section ref={ref} className="bg-white py-12 px-8 md:px-[5%] lg:px-[8%] flex flex-col md:flex-row">
-      <div className="container mx-auto max-w-6xl">
+    <section className="bg-white py-16 px-4 md:px-8 lg:px-16">
+      <div className="container mx-auto ">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
           Get in touch with our <span className="text-[#6BBD00]">team</span>
         </h2>
-        <p className="text-center text-gray-700 mb-12 text-[16px]">
+        <p className="text-center text-gray-600 mb-16 text-lg">
           The all-in-one powerhouse team to help you launch & scale faster
         </p>
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
-          <div className="w-full lg:w-1/2 relative">
-            <Image
-              src="/Assets/map.png"
-              alt="Dotted World Map"
-              width={1000}
-              height={1000}
-              className="w-full h-auto"
-              layout="responsive"
-            />
+        <div className="flex flex-col lg:flex-row items-start gap-[10rem]">
+          <div className="w-full lg:w-1/2 mr-[10rem]" >
+            <div className="relative mb-16">
+              <Image
+                src="/Assets/map.png"
+                alt="World Map"
+                width={600}
+                height={400}
+                className="w-full h-auto"
+              />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="bg-white px-2 py-1 rounded-md shadow-md text-xs">
+                  Lagos, Nigeria
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-gray-50 p-6 rounded-lg flex flex-col h-full">
+                <svg className="w-8 h-8 text-gray-600 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <h3 className="text-xl font-bold mb-2">Chat to Sales</h3>
+                <p className="text-gray-600 text-sm mb-6 flex-grow">Speak with our innovative team</p>
+                <button className="w-full py-2 px-4 rounded-full border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-base">
+                  Sales
+                </button>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg flex flex-col h-full">
+                <svg className="w-8 h-8 text-gray-600 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <h3 className="text-xl font-bold mb-2">Chat to Support</h3>
+                <p className="text-gray-600 text-sm mb-6 flex-grow">We&apos;re here to help 24/7</p>
+                <button className="w-full py-2 px-4 rounded-full border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-base">
+                  Support
+                </button>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg flex flex-col h-full">
+                <svg className="w-8 h-8 text-gray-600 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <h3 className="text-xl font-bold mb-2">Join our growing community</h3>
+                <p className="text-gray-600 text-sm mb-6 flex-grow">Impacting 1000+ Creatives</p>
+                <button className="w-full py-2 px-4 rounded-full border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-base">
+                  Community
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="w-full lg:w-1/2 bg-white rounded-[20px] p-8 md:py-8 md:px-[15%] lg:px-[5%] relative border border-gray-200 ">
-            <h3 className="text-gray-700 text-[14px] font-normal mb-6 text-center">
-              Let&apos;s build the next decade
-            </h3>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="w-full lg:w-[40%] bg-white rounded-3xl p-8 shadow-lg relative">
+            <div className="flex items-center mb-8">
+              <Image
+                src="/Assets/Avatar 1.svg"
+                alt="Avatar 1"
+                width={40}
+                height={40}
+                className="rounded-full mr-2"
+              />
+              <Image
+                src="/Assets/Avatar 2.svg"
+                alt="Avatar 2"
+                width={40}
+                height={40}
+                className="rounded-full mr-4"
+              />
+              <h3 className="text-gray-700 text-xl font-semibold">
+                Let&apos;s build the next decade!
+              </h3>
+            </div>
+            <form className="space-y-[2.65rem] " onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
                   type="text"
                   name="firstname"
                   placeholder="Firstname"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                  className="w-full p-3 rounded-full bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                   value={formData.firstname}
                   onChange={handleChange}
                   required
@@ -113,18 +136,18 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="text"
                   name="surname"
                   placeholder="Surname"
-                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                  className="w-full p-3 rounded-full bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                   value={formData.surname}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                  className="w-full p-3 rounded-full bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -133,7 +156,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                  className="w-full p-3 rounded-full bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -143,7 +166,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 type="text"
                 name="organization"
                 placeholder="Name of Organization"
-                className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                className="w-full p-3 rounded-full bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                 value={formData.organization}
                 onChange={handleChange}
                 required
@@ -152,7 +175,7 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 name="description"
                 placeholder="Tell us more details about your business and the scope and project in mind."
                 rows={4}
-                className="w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                className="w-full p-3 rounded-2xl bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                 value={formData.description}
                 onChange={handleChange}
                 required
@@ -161,36 +184,44 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
                 name="aim"
                 placeholder="What value do you aim to achieve with us?"
                 rows={2}
-                className="text-center w-full p-3 rounded-2xl bg-white border-2 border-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00]"
+                className="w-full p-3 rounded-2xl bg-white border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-[#6BBD00] text-base"
                 value={formData.aim}
                 onChange={handleChange}
                 required
               ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-[#6BBD00] text-white font-semibold text-lg py-3 rounded-[20px] hover:bg-[#4cbd00e6] transition duration-300 flex justify-center"
-              >
-                <CornerDownRight />
-                Submit
-              </button>
+              <div className="relative">
+                <button
+                  type="submit"
+                  className="w-full bg-[#6BBD00] text-white font-semibold text-lg py-4 rounded-full hover:bg-[#5aa500] transition duration-300 flex justify-center items-center"
+                >
+                  Submit
+                  <svg
+                    className="w-6 h-6 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </button>
+                <Image
+                  src="/Assets/Contact Us 1.png"
+                  alt="Person carrying envelope"
+                  width={320}
+                  height={320}
+                  className="absolute -bottom-0 -left-[20rem]"
+                />
+              </div>
             </form>
-            <div className="absolute -bottom-[-200px] md:-bottom-[-80px] lg:-left-[7.6rem] md:-left-[5rem] w-56 h-56 lg:w-48 lg:h-48">
-            <Image
-                src="/Assets/Contact Us 1.png"
-                alt="Person carrying envelope"
-                width={700}
-                height={400}
-                className="w-[100%] max-h-[350px] hidden md:block"
-              />
-            </div>
           </div>
         </div>
       </div>
-      <Toaster closeButton />
     </section>
-  );
-});
-
-ContactSection.displayName = "ContactSection";
-
-export default ContactSection;
+  )
+}

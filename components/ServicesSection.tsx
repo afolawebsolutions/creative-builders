@@ -1,54 +1,85 @@
 "use client";
 
-import { Fira_Code } from 'next/font/google';
+import { useState } from 'react';
 import Image from 'next/image';
 import { forwardRef } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { services } from '@/constants/Services'; // Update the path according to your directory structure
 
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
-
-// Using forwardRef to accept and forward a ref
 const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
+  const [showAll, setShowAll] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const visibleServices = showAll ? services : services.slice(0, 4);
+
   return (
     <section
       id='service'
       ref={ref}
-      className="bg-white p-8 md:p-16 lg:px-[10%] lg:mb-12"
+      className="bg-white px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16"
     >
-      <h2 className={`${firaCode.className} text-lg md:text-xl font-normal mb-4 text-center text-[#FF00A1]`}>
+      <h2 className="text-4xl font-bold mb-2 text-center text-[#FF00A1]">
         Our Services
       </h2>
-      <p className={`${firaCode.className} text-center mb-12 text-[#000000] text-base`}>
-        Your all-in-one powerhouse to launch and scale simple and extensive projects.
+      <p className="text-center mb-8 text-[#000000] text-lg max-w-3xl mx-auto">
+        All the services your business needs in one place to elevate your presence & increase revenue
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
-        {services.map((service, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {visibleServices.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center transform transition-transform duration-300 ease-in-out hover:scale-105"
+            className={`flex flex-col items-center text-center p-6 ${
+              hoveredIndex === index ? 'bg-[#7AC943]' : 'bg-[#D3E9AF]'
+            } transition-all duration-300 ${
+              hoveredIndex === index ? 'scale-105' : 'scale-100'
+            }`}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="w-full aspect-square relative mb-4">
+            <h3 className={`text-2xl font-bold mb-4 ${
+              hoveredIndex === index ? 'text-white' : 'text-black'
+            }`}>
+              {service.title}
+            </h3>
+            <p className={`text-sm mb-6 ${
+              hoveredIndex === index ? 'text-white' : 'text-black'
+            }`}>
+              {service.description}
+            </p>
+            <div className="mt-auto w-full">
               <Image
                 src={service.image}
                 alt={service.title}
-                fill
-                className="object-cover rounded-[40px]"
+                width={300}
+                height={200}
+                className="w-full h-auto object-cover"
               />
             </div>
-            <h3 className={`font-semibold text-center hover:underline text-[18px] ${service.color}`}>
-              {service.title}
-            </h3>
           </div>
         ))}
       </div>
+      {services.length > 4 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="flex items-center text-[#FF00A1] text-lg font-semibold"
+          >
+            {showAll ? (
+              <>
+                Show Less <ChevronUp className="ml-2 w-5 h-5" />
+              </>
+            ) : (
+              <>
+                Show More <ChevronDown className="ml-2 w-5 h-5" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </section>
   );
 });
 
-// Setting a display name for better debugging
 ServicesSection.displayName = 'ServicesSection';
 
 export default ServicesSection;

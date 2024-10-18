@@ -57,14 +57,13 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
             We <span className="font-cascadia lg:text-[6rem]">build</span> &lt;/&gt;
           </h2>
           <p className="text-[16px] lg:text-[22px] md:text-start text-center">
-            From ideas to life, we build brands with a unique identity, to be
-            recognizable from the moon🚀
+          Experience exponential growth in your business through creative & software solutions tailored to your business needs.
           </p>
         </div>
         {/* Email form */}
         <form
           onSubmit={handleSubmit}
-          className="flex bg-[#D8D8D8] rounded-full md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-4"
+          className="flex bg-[#D8D8D8] rounded-xl md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-4"
         >
           <input
             type="email"
@@ -82,15 +81,31 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           </button>
         </form>
       </div>
-      <div className="md:w-[50%] md:mt-0 flex justify-end ">
+      <div className="relative w-[110%] flex flex-col justify-end items-end">
         <Image
-          src="/Assets/Idea Img 1.png"
-          alt="Person holding IDEA sign"
+          src="/Assets/homepage shot 1.svg"
+          alt="Person with IDEA sign"
           width={500}
           height={500}
           className="object-contain backdrop-filter md:w-[80%]"
+          
         />
+        <div className="absolute top-2 left-[23rem]  w-[19rem]">
+          <Image
+          src="/Assets/Group 147.svg"
+          alt="Person with IDEA sign"
+          width={500}
+          height={500}
+          className="object-contain backdrop-filter md:w-[80%]"
+          
+        />
+        </div>
+      <div className="absolute bottom-4 space-x-20 left-[35rem] text-lg">
+        <span className="text-[#FF69B4]">Design</span>
+        <span className="text-[#FF69B4]">Video</span>
+        <span className="text-[#FF69B4]">Tech</span>
       </div>
+    </div>
       <Toaster closeButton />
     </section>
   );
