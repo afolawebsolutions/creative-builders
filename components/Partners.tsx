@@ -25,7 +25,7 @@ export default function Partners() {
         {/* Scrolling container */}
         <div className="flex animate-scrollLeft ">
           {[...partners, ...partners].map((partner, index) => (
-            <div key={index} className="flex-shrink-0 mx-8">
+            <div key={index} className="flex-shrink-0 mx-">
               <Image
                 src={partner.image}
                 alt={partner.name}

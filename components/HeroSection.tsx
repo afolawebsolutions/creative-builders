@@ -75,7 +75,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           />
           <button
             type="submit"
-            className="bg-[#4A2D4E] md:h-[50px] h-[40px] text-white px-2 py-1 lg:px-4 rounded-xl text-[14px]"
+            className="bg-[#4A2D4E] md:h-[50px] h-[40px] text-white px-2 py-1 lg:px-3 rounded-xl text-[14px]"
           >
             Begin a project <span className="font-bold text-[14px]"> -&gt;</span>
           </button>
@@ -100,7 +100,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           
         />
         </div>
-      <div className="absolute bottom-4 space-x-20 left-[35rem] text-lg">
+      <div className="absolute bottom-4 space-x-20 left-[38rem] text-lg">
         <span className="text-[#FF69B4]">Design</span>
         <span className="text-[#FF69B4]">Video</span>
         <span className="text-[#FF69B4]">Tech</span>
