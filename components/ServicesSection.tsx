@@ -36,7 +36,7 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
         {visibleServices.map((service, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center  py-10  px-[3.5rem] ${
+            className={`flex flex-col items-center  py-10  px-[1.5rem] ${
               hoveredIndex === index ? 'bg-[#7AC943]' : 'bg-[#D3E9AF]'
             } transition-all duration-300 ${
               hoveredIndex === index ? 'scale-105' : 'scale-100'
@@ -44,17 +44,17 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <h3 className={` ${firaCode.className} text-2xl font-bold mb-6  text-center ${
+            <h3 className={` ${firaCode.className} text-2xl font-semibold mb-6  text-start ${
               hoveredIndex === index ? 'text-white' : 'text-black'
             }`}>
               {service.title}
             </h3>
-            <p className={`text-sm  text-start mb-6 mx-6 ${
+            <p className={`text-sm  text-start mb-6 mx-9 ${
               hoveredIndex === index ? 'text-white' : 'text-black'
             }`}>
               {service.description}
             </p>
-            <div className="mt-auto w-full">
+            <div className="mt-auto w-[90%] mx-4">
               <Image
                 src={service.image}
                 alt={service.title}
