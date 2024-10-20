@@ -37,7 +37,7 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
           <div
             key={index}
             className={`flex flex-col items-center  py-10  px-[1.5rem] ${
-              hoveredIndex === index ? 'bg-[#7AC943]' : 'bg-[#D3E9AF]'
+              hoveredIndex === index ? 'bg-[#6BBD00]' : 'bg-[#B5DE80]'
             } transition-all duration-300 ${
               hoveredIndex === index ? 'scale-105' : 'scale-100'
             }`}
@@ -45,12 +45,12 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
             onMouseLeave={() => setHoveredIndex(null)}
           >
             <h3 className={` ${firaCode.className} text-2xl font-semibold mb-6  text-start ${
-              hoveredIndex === index ? 'text-white' : 'text-black'
+              hoveredIndex === index ? 'text-black' : 'text-black'
             }`}>
               {service.title}
             </h3>
             <p className={`text-sm  text-start mb-6 mx-9 ${
-              hoveredIndex === index ? 'text-white' : 'text-black'
+              hoveredIndex === index ? 'text-black' : 'text-black'
             }`}>
               {service.description}
             </p>

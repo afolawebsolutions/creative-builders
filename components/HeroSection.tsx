@@ -43,17 +43,17 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="hero"
       ref={ref}
-      className="bg-[#2E1F30] text-white flex flex-col md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
+      className="bg-[#2E1F30] text-white flex flex-col md:flex-row items-center md:justify-around pt-48 pb-28 md:px-[7%] px-5"
     >
-      <div className="md:w-1/2 sm:text-center pb-11">
+      <div className="md:w-[32%] sm:text-center pb-11">
         <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center pt-7">
-          <h2 className="text-3xl lg:text-[4rem] font-archivo">
+          <h2 className="text-3xl lg:text-[6rem] font-archivo pb-8">
             Your <span className="font-cascadia">Vision!</span>
           </h2>
-          <h2 className="text-4xl lg:text-[4rem] font-archivo">
+          <h2 className="text-4xl lg:text-[6rem] font-archivo ">
             We <span className="font-cascadia lg:text-[6rem]">design;</span>
           </h2>
-          <h2 className="text-4xl lg:text-[4rem] font-archivo">
+          <h2 className="text-4xl lg:text-[6rem] font-archivo py-8">
             We <span className="font-cascadia lg:text-[6rem]">build</span> &lt;/&gt;
           </h2>
           <p className="text-[16px] lg:text-[22px] md:text-start text-center">
@@ -63,12 +63,12 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
         {/* Email form */}
         <form
           onSubmit={handleSubmit}
-          className="flex bg-[#D8D8D8] rounded-xl md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-4"
+          className="flex bg-[#D8D8D8] rounded-xl md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-6 mt-[4rem]"
         >
           <input
             type="email"
             placeholder="Enter your email address"
-            className="px-2 lg:px-8 py-2 bg-transparent rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4caf50] text-black"
+            className="px-2 lg:px-8 py-4  bg-transparent rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4caf50] text-black"
             value={email}
             onChange={handleChange}
             required
@@ -81,16 +81,16 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           </button>
         </form>
       </div>
-      <div className="relative w-[110%] flex flex-col justify-end items-end">
+      <div className="relative w-[60%] flex flex-col justify-end items-end">
         <Image
           src="/Assets/homepage shot 1.svg"
           alt="Person with IDEA sign"
           width={500}
           height={500}
-          className="object-contain backdrop-filter md:w-[80%]"
+          className="object-contain backdrop-filter md:w-[90%] absolute -top-72 left-[16rem]"
           
         />
-        <div className="absolute top-2 left-[23rem]  w-[19rem]">
+        <div className="absolute -top-[17.5rem] left-[25rem]  w-[20rem]">
           <Image
           src="/Assets/Group 147.svg"
           alt="Person with IDEA sign"
@@ -100,10 +100,10 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           
         />
         </div>
-      <div className="absolute bottom-4 space-x-20 left-[38rem] text-lg">
-        <span className="text-[#FF69B4]">Design</span>
-        <span className="text-[#FF69B4]">Video</span>
-        <span className="text-[#FF69B4]">Tech</span>
+      <div className="absolute -bottom-[22.5rem] space-x-20 left-[39rem] text-lg">
+        <span className="text-[#96519F]">Design</span>
+        <span className="text-[#96519F]">Video</span>
+        <span className="text-[#96519F]">Tech</span>
       </div>
     </div>
       <Toaster closeButton />

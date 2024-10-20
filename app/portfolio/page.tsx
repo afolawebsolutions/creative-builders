@@ -9,7 +9,7 @@ export default function Home() {
   const contactSectionRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null); // Ref for 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <Header />
       <PortfolioSection />
       <div ref={footerRef}>

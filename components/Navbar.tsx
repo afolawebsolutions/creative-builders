@@ -110,7 +110,7 @@ export default function Navbar({
   return (
     <>
       <nav
-        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-0 mx-auto "
+        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-5 mx-auto "
         style={{ backgroundColor: navbarBackground, color: fontColor }}
       >
         <div className=" mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
@@ -127,7 +127,7 @@ export default function Navbar({
 
           <div className="hidden md:flex items-center justify-center flex-grow">
             <div
-              className="rounded-full px-6 py-3 flex items-center justify-around lg:w-[70%] md:w-fit space-x-2"
+              className="rounded-full px-6 py-[1.2rem] flex items-center justify-around lg:w-[50%] md:w-fit space-x-2"
               style={{ backgroundColor: barBackground }}
             >
               <a onClick={() => scrollToSection(section2Ref)} className="hover:underline text-[14px]">
@@ -177,7 +177,7 @@ export default function Navbar({
 
           <button
           onClick={() => scrollToSection(contactSectionRef)}
-            className={`${buttonColor}  text-[18px] px-4 py-2 rounded-full hidden md:flex items-center space-x-2 border-[#6BBD00] border-2 hover:bg-[#4cbd00e6] hover:text-white`}
+            className={`${buttonColor}  text-[18px] px-4 py-2 rounded-lg hidden md:flex items-center space-x-2 border-[#6BBD00] border-2 hover:bg-[#4cbd00e6] hover:text-white`}
           >
             <span className="hidden lg:flex pr-2">{buttonIcon}</span>
             {buttonText}
