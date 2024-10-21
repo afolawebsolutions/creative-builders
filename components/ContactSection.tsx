@@ -126,7 +126,7 @@ export default function Component() {
                 </h3>
               </div>
               <form className="space-y-4 " onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
                   <input
                     type="text"
                     name="firstname"
@@ -151,7 +151,7 @@ export default function Component() {
                     type="email"
                     name="email"
                     placeholder="email address"
-                    className="w-[120%] p-5  bg-white border rounded-xl border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    className="w-full lg:w-[120%] p-5  bg-white border rounded-xl border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -160,7 +160,7 @@ export default function Component() {
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
-                    className="w-[80%] ml-[3.28rem] p-5 rounded-xl bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    className=" w-full lg:w-[80%] lg:ml-[3.28rem] p-5 rounded-xl bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
                     value={formData.phone}
                     onChange={handleChange}
                     required
@@ -223,7 +223,7 @@ export default function Component() {
             alt="Person carrying envelope"
             width={350}
             height={350}
-            className="absolute bottom-[0.5rem] left-[51.2%]"
+            className="absolute bottom-[0.5rem] left-[51.2%] hidden lg:block"
           />
         </div>
       </div>

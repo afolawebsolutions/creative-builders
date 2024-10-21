@@ -53,8 +53,8 @@ export default function Partners() {
   }
 
   return (
-    <section className="py-5 bg-white overflow-hidden relative mx-32">
-      <h2 className={`${firaCode.className} text-center mb-[60px]  text-3xl font-extralight text-[#6BBD00]`}>
+    <section className="py-5 bg-white overflow-hidden relative mx-28 mb-3">
+      <h2 className={`${firaCode.className} text-center mb-[20px]  text-3xl font-extralight text-[#6BBD00]`}>
         Partners
       </h2>
       <div className="mainContainer">
@@ -68,11 +68,7 @@ export default function Partners() {
       </div>
       <style jsx global>{`
         .mainContainer {
-          ;
           overflow: hidden;
-        }
-        .mainContainer .container {
-          padding: 0 0;
         }
         .mainContainer .container img {
           height: 40px;
@@ -83,12 +79,6 @@ export default function Partners() {
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-        .slick-slide {
-          margin: 0 10px;
-        }
-        .slick-list {
-          margin: 0 -10px;
         }
       `}</style>
     </section>
