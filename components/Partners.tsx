@@ -38,23 +38,35 @@ export default function Partners() {
     arrows: false,
     responsive: [
       {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 5,
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
         }
       }
     ]
   }
 
   return (
-    <section className="py-5 bg-white overflow-hidden relative mx-28 mb-3">
-      <h2 className={`${firaCode.className} text-center mb-[20px]  text-3xl font-extralight text-[#6BBD00]`}>
+    <section className="py-5 bg-white overflow-hidden relative px-4 sm:px-6 md:px-8 lg:px-28 mb-3">
+      <h2 className={`${firaCode.className} text-center mb-[20px] text-2xl sm:text-3xl font-extralight text-[#6BBD00]`}>
         Partners
       </h2>
       <div className="mainContainer">
@@ -71,9 +83,20 @@ export default function Partners() {
           overflow: hidden;
         }
         .mainContainer .container img {
-          height: 40px;
+          height: 30px;
+          max-width: 100%;
           display: block;
-          margin: 0 ;
+          margin: 0 auto;
+        }
+        @media (min-width: 640px) {
+          .mainContainer .container img {
+            height: 35px;
+          }
+        }
+        @media (min-width: 1024px) {
+          .mainContainer .container img {
+            height: 40px;
+          }
         }
         .slick-track {
           display: flex;

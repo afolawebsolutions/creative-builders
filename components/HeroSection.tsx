@@ -45,7 +45,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="bg-[#2E1F30] text-white flex flex-col md:flex-row items-center md:justify-around pt-48 pb-28 md:px-[7%] px-5"
     >
-      <div className="md:w-[32%] sm:text-center pb-11">
+      <div className="md:w-[37%] sm:text-center pb-11">
         <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center pt-7">
           <h2 className="text-3xl lg:text-[6rem] font-archivo pb-8">
             Your <span className="font-cascadia">Vision!</span>

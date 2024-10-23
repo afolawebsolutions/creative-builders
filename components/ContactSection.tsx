@@ -71,7 +71,7 @@ export default function Component() {
               />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4  lg:absolute lg:left-36 lg:-bottom-[0rem]">
+            <div className="flex-wrap flex justify-center md:grid-cols-3 gap-4  lg:absolute lg:left-36 lg:-bottom-[0rem]">
               <div className="bg-gray-50 p-4 h-[20rem] w-[15rem] rounded-lg">
                 <svg className="w-6 h-6 text-gray-600 mb-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
