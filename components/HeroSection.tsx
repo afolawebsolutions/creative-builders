@@ -60,7 +60,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           Experience exponential growth in your business through creative & software solutions tailored to your business needs.
           </p>
         </div>
-        {/* Email form */}
+       
         <form
           onSubmit={handleSubmit}
           className="flex bg-[#D8D8D8] rounded-xl md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-6 mt-[4rem]"
