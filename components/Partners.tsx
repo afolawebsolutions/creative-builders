@@ -65,7 +65,7 @@ export default function Partners() {
   }
 
   return (
-    <section className="py-5 bg-white overflow-hidden relative px-4 sm:px-6 md:px-8 lg:px-28 mb-3">
+    <section className="py-5 bg-white overflow-hidden relative   mb-3">
       <h2 className={`${firaCode.className} text-center mb-[20px] text-2xl sm:text-3xl font-extralight text-[#6BBD00]`}>
         Partners
       </h2>

@@ -36,7 +36,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
           alt="Person with raised arm" 
           width={500} 
           height={500}
-          className="w-full h-auto max-h-[400px] object-cover rounded-xl"
+          className="w-full h-auto max-h-[800px] object-cover rounded-xl"
         />
       </div>
       <div className="w-full md:w-1/2 md:pl-8 lg:pl-[4rem] md:pr-4 lg:pr-[12rem]">
