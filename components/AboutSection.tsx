@@ -55,10 +55,10 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
         <div className='flex justify-center md:justify-start'>
           <button 
             onClick={() => scrollToSection(section3Ref)} 
-            className={`${poppins.className} text-[#6BBD00] flex items-center bg-white text-xs sm:text-sm font-normal py-2 sm:py-3 px-4 sm:px-5 rounded-xl border-2 border-[#6BBD00] hover:bg-slate-100 transition duration-300`}
+            className={`${poppins.className} text-[black] flex items-center  bg-white text-xs sm:text-sm font-normal py-2 sm:py-3 px-4 sm:px-5 rounded-xl border-2 border-[#6BBD00] hover:bg-slate-100 transition duration-300`}
           >
             Our Services
-            <ArrowDown className="ml-2 w-4 h-4" />
+            <ArrowDown className="ml-2 w-6 h-6 bg-[#6BBD00] rounded-full" />
           </button>
         </div>
       </div>

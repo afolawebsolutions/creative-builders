@@ -75,7 +75,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
                 type="submit"
                 className="bg-[#4A2D4E] hover:bg-[#5d395f] transition-colors text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap flex items-center justify-center gap-2"
               >
-                Begin a project <span className="font-bold">→</span>
+                Begin a project <span className="font-bold bg-[#332434] rounded-full w-6">→</span>
               </button>
             </form>
           </div>

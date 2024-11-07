@@ -22,21 +22,21 @@ export const services = [
   {
     title: 'Product Photography',
     description: 'Capture your products in their best light. Showcase your offerings with professional, high-quality images that sell.',
-    image: '/Assets/image (2).png',
+    image: '/Assets/image(6).svg',
   },
   {
     title: 'Web Development',
     description: "Build robust, scalable web applications tailored to your business needs. From front-end to back-end, we've got you covered.",
-    image: '/Assets/Group 8.png',
+    image: '/Assets/image(7).svg',
   },
   {
     title: 'App Development',
     description: 'Create powerful mobile applications that engage users and drive business growth. iOS, Android, or cross-platform - we do it all.',
-    image: '/Assets/image (3).png',
+    image: '/Assets/image(8).svg',
   },
   {
     title: 'Technical Consulting',
     description: 'Get expert advice on your tech stack, architecture, and development processes. Optimize your technology for maximum efficiency.',
-    image: '/Assets/image (5).png',
+    image: '/Assets/image(10).svg',
   },
 ];

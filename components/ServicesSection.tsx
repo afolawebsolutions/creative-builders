@@ -1,28 +1,26 @@
-"use client";
+"use client"
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { forwardRef } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { services } from '@/constants/Services'; // Update the path according to your directory structure
-import { Fira_Code } from 'next/font/google';
+import { useState } from 'react'
+import Image from 'next/image'
+import { forwardRef } from 'react'
+import { ArrowDown, ArrowUp } from 'lucide-react'
+import { services } from '@/constants/Services'
+import { Fira_Code } from 'next/font/google'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '700'],
-});
-
+})
 
 const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
-  
-  const [showAll, setShowAll] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-  const visibleServices = showAll ? services : services.slice(0, 4);
+  const visibleServices = showAll ? services : services.slice(0, 4)
 
   return (
     <section
-      id='service'
+      id="service"
       ref={ref}
       className="bg-white px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16"
     >
@@ -38,20 +36,22 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
             key={index}
             className={`flex flex-col items-center  py-10  px-[1.5rem] ${
               hoveredIndex === index ? 'bg-[#6BBD00]' : 'bg-[#B5DE80]'
-            } transition-all duration-300 ${
-              hoveredIndex === index ? 'scale-105' : 'scale-100'
-            }`}
+            } transition-all duration-300 ${hoveredIndex === index ? 'scale-105' : 'scale-100'}`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <h3 className={` ${firaCode.className} text-2xl font-semibold mb-6  text-start ${
-              hoveredIndex === index ? 'text-black' : 'text-black'
-            }`}>
+            <h3
+              className={` ${firaCode.className} text-2xl font-semibold mb-6  text-start ${
+                hoveredIndex === index ? 'text-black' : 'text-black'
+              }`}
+            >
               {service.title}
             </h3>
-            <p className={`text-sm  text-start mb-6 mx-9 ${
-              hoveredIndex === index ? 'text-black' : 'text-black'
-            }`}>
+            <p
+              className={`text-sm  text-start mb-6 mx-9 ${
+                hoveredIndex === index ? 'text-black' : 'text-black'
+              }`}
+            >
               {service.description}
             </p>
             <div className="mt-auto w-[90%] mx-4">
@@ -70,24 +70,17 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="flex items-center text-[#FF00A1] text-lg font-semibold"
+            className="flex items-center justify-center w-14 h-14 rounded-full border-[5px] border-[#2E1F30] text-[#2E1F30]"
+            aria-label={showAll ? "Show less services" : "Show more services"}
           >
-            {showAll ? (
-              <>
-                Show Less <ChevronUp className="ml-2 w-5 h-5" />
-              </>
-            ) : (
-              <>
-                Show More <ChevronDown className="ml-2 w-5 h-5" />
-              </>
-            )}
+            {showAll ? <ArrowUp className="w-10 h-10 text-[#2E1F30]" /> : <ArrowDown className="w-10 h-10  " />}
           </button>
         </div>
       )}
     </section>
-  );
-});
+  )
+})
 
-ServicesSection.displayName = 'ServicesSection';
+ServicesSection.displayName = 'ServicesSection'
 
-export default ServicesSection;
+export default ServicesSection
