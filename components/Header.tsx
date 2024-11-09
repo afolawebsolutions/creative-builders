@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X, Phone } from 'lucide-react'
 
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
@@ -70,7 +70,7 @@ export default function Header() {
         <button
           className="bg-white text-[#6BBD00] text-[18px] px-4 py-2 rounded-xl hidden md:flex items-center space-x-2 border-[#6BBD00] border-2 hover:bg-[#4cbd00e6] hover:text-white"
         >
-          <span className="hidden lg:flex pr-2">📞</span>
+          <span className="hidden lg:flex pr-2 color-[#6BBD00] "><Phone/></span>
           Book a call
         </button>
 

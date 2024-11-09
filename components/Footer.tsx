@@ -8,16 +8,13 @@ const firaCode = Fira_Code({
 });
 
 interface FooterProps {
-
-  contactSectionRef : RefObject<HTMLDivElement>;
-
+  contactSectionRef: RefObject<HTMLDivElement>;
 }
 
-const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, ref)=>{
-
-    const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
-      ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, ref) => {
+  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <footer ref={ref} className={`${firaCode.className} bg-[#2E1F30] text-white py-12 px-6 md:px-[5%] lg:py-[3%] `}>
@@ -55,7 +52,6 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
             </div>
           </div>
 
-          
           <div className="flex flex-row gap-8 flex-wrap md:justify-around w-full">
             {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
               <div key={category}>
@@ -75,11 +71,18 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-[12px] md:text-[14px]">&copy; 2024 Creative Builders. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 sm:mt-0">
-              {['discord','twitter','linkedin', 'facebook', 'youtube', 'instagram'].map((social) => (
-                <a key={social} href={`#${social}`} className="text-[#FF00A1] hover:text-[#ff00bb] transition-colors">
-                  <span className="sr-only">{social}</span>
+              {[
+                { name: 'discord', url: 'https://discord.gg/nnkbfpNa' },
+                { name: 'twitter', url: 'https://x.com/Creatives_Build' },
+                { name: 'linkedin', url: 'https://www.linkedin.com/company/creativesbuild/' },
+                { name: 'facebook', url: '#facebook' },
+                { name: 'youtube', url: '#youtube' },
+                { name: 'instagram', url: 'https://www.instagram.com/creativebuilders_/' }
+              ].map((social) => (
+                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-[#FF00A1] hover:text-[#ff00bb] transition-colors">
+                  <span className="sr-only">{social.name}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    {getSocialIcon(social)}
+                    {getSocialIcon(social.name)}
                   </svg>
                 </a>
               ))}
@@ -90,8 +93,6 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
     </footer>
   );
 });
-
-
 
 Footer.displayName = 'Footer'
 
@@ -118,6 +119,8 @@ function getSocialIcon(social: string) {
       return <><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></>
     case 'instagram':
       return <><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></>
+    case 'discord':
+      return <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path>
     default:
       return null
   }

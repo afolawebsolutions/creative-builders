@@ -1,3 +1,5 @@
+
+
 'use client'
 
 import { useState } from 'react'
@@ -75,7 +77,6 @@ const projects: Project[] = [
     category: "Web Design"
   }
 ]
-
 export default function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState('All')
 
@@ -84,26 +85,33 @@ export default function PortfolioSection() {
     : projects.filter(project => project.category === activeCategory)
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
-      <h1 className="text-5xl font-bold text-center my-4 text-[#333333]">Our Portfolio</h1>
-      <p className="text-center mb-8 text-[#666666]">
-        See through our screens! Get <span className="text-[#7209B7]">Inspired</span>, Get{' '}
-        <span className="text-[#7209B7]">Creative</span>!
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4 text-[#2D2D2D]">Our Portfolio</h1>
+      <p className="text-center mb-12 text-[#666666] text-lg">
+        See through our screens! Get <span className="text-[#7209B7] font-semibold">Inspired</span>, Get{' '}
+        <span className="text-[#7209B7] font-semibold">Creative</span>!
       </p>
       
-      <TabSelector categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      <div className="flex justify-center items-center mb-16">
+        <TabSelector categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      </div>
 
-      <div className="space-y-24 mt-12">
+      <div className="space-y-24 mt-16">
         {filteredProjects.map((project, index) => (
-          <ProjectShowcase key={index} {...project} />
+          <div key={index}>
+            <ProjectShowcase {...project} />
+            {index < filteredProjects.length - 1 && (
+              <hr className="my-12 border-t border-gray-200" />
+            )}
+          </div>
         ))}
       </div>
 
-      <div className="flex justify-center space-x-4 mt-12">
-        <button className="px-6 py-2 border border-[#4CAF50] text-[#4CAF50] rounded-full hover:bg-[#4CAF50] hover:text-white transition-colors">
+      <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mt-16">
+        <button className="w-full sm:w-auto px-8 py-3 border-2 border-[#6BBD00] text-[#6BBD00] rounded-full hover:bg-[#6BBD00] hover:text-white transition-colors text-lg font-medium">
           Show More
         </button>
-        <button className="px-6 py-2 bg-[#4CAF50] text-white rounded-full hover:bg-[#45a049] transition-colors">
+        <button className="w-full sm:w-auto px-8 py-3 bg-[#6BBD00] text-white rounded-full hover:bg-[#5ca600] transition-colors text-lg font-medium">
           Book with us!
         </button>
       </div>

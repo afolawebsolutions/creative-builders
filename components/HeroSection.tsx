@@ -40,14 +40,14 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="hero"
       ref={ref}
-      className="bg-[#2E1F30] text-white flex flex-col justify-between px-4 sm:px-6 lg:px-8 overflow-hidden relative "
+      className=" bg-[#2E1F30] text-white flex flex-col justify-between  px-2 sm:px-4 lg:px-8 overflow-hidden relative"
     >
-      <div className="max-w-[92%] mx-auto mt-32 lg:mt-16 w-full flex-grow flex flex-col justify-center relative  lg:pt-0 pb-20 lg:pb-0">
+      <div className="max-w-[92%] mx-auto mt-32 lg:mt-16 w-full flex-grow flex flex-col justify-center  items-center md:items-stretch md:relative lg:pt-0 pb-8 sm:pb-10 md:pb-12 lg:pb-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center">
           <div className="space-y-8 lg:space-y-12 z-10">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
-              <span className="font-archivo font-extrabold " >Your</span>{" "}
-              <span className="font-cascadia ">vision!</span>
+              <span className="font-archivo font-extrabold">Your</span>{" "}
+              <span className="font-cascadia">vision!</span>
               <br/>
               <span className="font-archivo font-extrabold">we</span>{" "}
               <span className="font-cascadia">design;</span>
@@ -79,14 +79,14 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
               </button>
             </form>
           </div>
-          <div className="relative w-[110%] lg:w-[120%] h-[620px] md:h-[600px] lg:h-[800px] xl:h-[800px] flex flex-col ">
+          <div className="relative w-[110%] lg:w-[120%] h-[600px] md:h-[600px] lg:h-[800px] xl:h-[800px] flex flex-col">
             <div className="flex-grow relative scale-125 md:scale-90 lg:scale-90">
               <Image
                 src="/Assets/homepage shot 1.svg"
                 alt="Person with IDEA sign"
                 layout="fill"
                 priority
-                className="object-contain object-right w-full h-full "
+                className="object-contain object-right w-full h-full"
               />
               <div className="absolute top-[10%] left-12 w-[32%] h-[50%]">
                 <Image
@@ -99,13 +99,13 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-[15%] right-[15%] md:bottom-[10%] md:right-[20%] lg:bottom-[12%] lg:right-[8%] w-full lg:w-auto">
-              <div className="flex justify-end space-x-6 sm:space-x-8 lg:space-x-16 text-sm sm:text-base lg:text-lg pr-4 sm:pr-8 lg:pr-0">
-                <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Design</span>
-                <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Video</span>
-                <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Tech</span>
-              </div>
-            </div>
+        <div className="hero-bottom-text">
+          <div className="flex justify-end space-x-6 sm:space-x-10 lg:space-x-16 text-sm sm:text-base lg:text-lg pr-4 sm:pr-8 lg:pr-0">
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer ">Design</span>
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Video</span>
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Tech</span>
+          </div>
+        </div>
       </div>
       <Toaster closeButton />
     </section>

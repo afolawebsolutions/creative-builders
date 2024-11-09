@@ -110,7 +110,7 @@ export default function Navbar({
   return (
     <>
       <nav
-        className="fixed w-full  z-50 transition-colors duration-500 pt-5 md:pt-5 mx-auto "
+        className="fixed w-full  z-50 transition-colors duration-500 pt-1 md:pt-0 mx-auto "
         style={{ backgroundColor: navbarBackground, color: fontColor }}
       >
         <div className=" mx-auto flex md:justify-around justify-between items-center p-2 px-2 md:px-[5%]" style={{ '--md-lg-padding': `${paddingValue}px`} as React.CSSProperties}  >
