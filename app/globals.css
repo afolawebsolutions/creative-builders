@@ -4,15 +4,31 @@
 
 /* Default width for mobile screens */
 .dynamic-logo {
-    width: 160px; /* Default width for mobile screens */
-  }
-  
-  /* Base styles */
+  width: 160px;
+}
+
+/* Base styles */
 .hero-bottom-text {
   position: absolute;
   bottom: 18%;
   right: 15%;
   width: 100%;
+}
+
+/* Media queries for various screen sizes, including very small screens */
+@media screen and (min-width: 300px) and (max-width: 359px) {
+  .hero-bottom-text {
+    bottom: 16%;
+    right: 12%;
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 409px) {
+  .hero-bottom-text {
+    bottom: 14%;
+    right: 15%;
+  }
 }
 
 @media screen and (min-width: 410px) {
@@ -21,18 +37,14 @@
     right: 18%;
     align-items: center;
   }
- 
 }
 
-
-/* Media queries for various screen sizes */
 @media screen and (min-width: 480px) {
   .hero-bottom-text {
     bottom: 10%;
     right: 22%;
     align-items: center;
   }
- 
 }
 
 @media screen and (min-width: 640px) {
@@ -41,7 +53,6 @@
     right: 22%;
     align-items: center;
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -50,12 +61,11 @@
     right: 22%;
   }
   .dynamic-logo {
-    width: 120px; /* Width for medium screens (tablet view) */
+    width: 120px;
   }
   .md-lg-dynamic-padding {
     padding: var(--md-lg-padding, 18px);
   }
- 
 }
 
 @media screen and (min-width: 1024px) {
@@ -65,7 +75,7 @@
     width: auto;
   }
   .dynamic-logo {
-    width: var(--logo-width, 120px); /* Dynamic width for large screens */
+    width: var(--logo-width, 120px);
   }
   .md-lg-dynamic-padding {
     padding: var(--md-lg-padding, 18px);
@@ -87,7 +97,13 @@
 }
 
 /* Adjustments for hero section bottom margin */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 479px) {
+  .hero-section {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .hero-section {
     margin-bottom: 0rem;
   }
