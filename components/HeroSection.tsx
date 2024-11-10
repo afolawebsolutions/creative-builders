@@ -6,15 +6,12 @@ import emailjs from "emailjs-com";
 import { Toaster, toast } from "sonner";
 
 const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
-  // State for managing form data
   const [email, setEmail] = useState("");
 
-  // Handle email input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  // Handle form submission to Email.js
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -32,7 +29,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
         userID
       );
       toast.success("Email submitted successfully!");
-      setEmail(""); // Reset the email field
+      setEmail("");
     } catch (error) {
       console.error("Failed to send the email:", error);
       toast.error("Failed to send the email. Please try again later.");
@@ -43,53 +40,72 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="hero"
       ref={ref}
-      className="bg-[#23707A] text-white flex flex-col-reverse md:flex-row items-center md:justify-around pt-[120px] md:px-[7%] px-5"
+      className=" bg-[#2E1F30] text-white flex flex-col justify-between  px-2 sm:px-4 lg:px-8 overflow-hidden relative"
     >
-      <div className="md:w-1/2 sm:text-center pb-11">
-        <div className="flex flex-col gap-[22px] lg:gap-[50px] mb-8 md:items-start items-center pt-7">
-          <h2 className="text-3xl lg:text-[4rem] font-archivo">
-            Your <span className="font-cascadia">Vision!</span>
-          </h2>
-          <h2 className="text-4xl lg:text-[4rem] font-archivo">
-            We <span className="font-cascadia lg:text-[6rem]">design;</span>
-          </h2>
-          <h2 className="text-4xl lg:text-[4rem] font-archivo">
-            We <span className="font-cascadia lg:text-[6rem]">build</span> &lt;/&gt;
-          </h2>
-          <p className="text-[16px] lg:text-[22px] md:text-start text-center">
-            From ideas to life, we build brands with a unique identity, to be
-            recognizable from the moon🚀
-          </p>
+      <div className="max-w-[92%] mx-auto mt-32 lg:mt-16 w-full flex-grow flex flex-col justify-center  items-center md:items-stretch md:relative lg:pt-0 pb-8 sm:pb-10 md:pb-12 lg:pb-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+          <div className="space-y-8 lg:space-y-12 z-10">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
+              <span className="font-archivo font-extrabold">Your</span>{" "}
+              <span className="font-cascadia">vision!</span>
+              <br/>
+              <span className="font-archivo font-extrabold">we</span>{" "}
+              <span className="font-cascadia">design;</span>
+              <br />
+              <span className="font-archivo font-extrabold">we</span>{" "}
+              <span className="font-cascadia">build</span>{" "}
+              <span className="font-cascadia">&lt;/&gt;</span>
+            </h1>
+            <p className="text-lg sm:text-xl lg:text-2xl max-w-xl opacity-90">
+              Experience exponential growth in your business through creative & software solutions tailored to your business needs.
+            </p>
+            <form
+              onSubmit={handleSubmit}
+              className="flex items-center bg-[#D8D8D8] rounded-xl p-2 max-w-xl"
+            >
+              <input
+                type="email"
+                placeholder="Tell us about your project"
+                className="flex-grow px-4 sm:px-6 py-2 sm:py-3 bg-transparent rounded-full text-[#636262] placeholder-[#636262] focus:outline-none text-xs sm:text-sm"
+                value={email}
+                onChange={handleChange}
+                required
+              />
+              <button
+                type="submit"
+                className="bg-[#4A2D4E] hover:bg-[#5d395f] transition-colors text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap flex items-center justify-center gap-2"
+              >
+                Begin a project <span className="font-bold bg-[#332434] rounded-full w-6">→</span>
+              </button>
+            </form>
+          </div>
+          <div className="relative w-[110%] lg:w-[120%] h-[600px] md:h-[600px] lg:h-[800px] xl:h-[800px] flex flex-col">
+            <div className="flex-grow relative scale-125 md:scale-90 lg:scale-90">
+              <Image
+                src="/Assets/homepage shot 1.svg"
+                alt="Person with IDEA sign"
+                layout="fill"
+                priority
+                className="object-contain object-right w-full h-full"
+              />
+              <div className="absolute top-[10%] left-12 w-[32%] h-[50%]">
+                <Image
+                  src="/Assets/Group 147.svg"
+                  alt="Quarterly Revenue"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Email form */}
-        <form
-          onSubmit={handleSubmit}
-          className="flex bg-[#D8D8D8] rounded-full md:w-[90%] lg:w-[80%] h-[50px] md:h-[60px] items-center justify-between px-2 py-4"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="px-2 lg:px-8 py-2 bg-transparent rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4caf50] text-black"
-            value={email}
-            onChange={handleChange}
-            required
-          />
-          <button
-            type="submit"
-            className="bg-[#00A85A] md:h-[50px] h-[40px] text-white px-2 py-1 lg:px-4 rounded-full text-[12px] lg:text-[18px]"
-          >
-            Start project <span className="font-bold">-&gt;</span>
-          </button>
-        </form>
-      </div>
-      <div className="md:w-[50%] md:mt-0 flex justify-end ">
-        <Image
-          src="/Assets/Idea Img 1.png"
-          alt="Person holding IDEA sign"
-          width={500}
-          height={500}
-          className="object-contain backdrop-filter md:w-[80%]"
-        />
+        <div className="hero-bottom-text">
+          <div className="flex justify-end space-x-6 sm:space-x-10 lg:space-x-16 text-sm sm:text-base lg:text-lg pr-4 sm:pr-8 lg:pr-0">
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer ">Design</span>
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Video</span>
+            <span className="text-[#96519F] hover:text-[#a65caf] transition-colors cursor-pointer">Tech</span>
+          </div>
+        </div>
       </div>
       <Toaster closeButton />
     </section>

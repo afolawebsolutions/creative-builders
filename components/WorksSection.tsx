@@ -3,7 +3,7 @@
 import { useState, useRef, useImperativeHandle, forwardRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { works } from "@/constants/Works"; // Adjust path according to your project structure
 import { Poppins, Fira_Code } from "next/font/google";
 import "slick-carousel/slick/slick.css";
@@ -67,13 +67,13 @@ const WorksSection = forwardRef<SliderHandle>((_, ref) => {
   }));
 
   return (
-    <section id="works" className="bg-[#23707A] text-white p-8 lg:p-16">
+    <section id="works" className=" p-8 lg:py-16 lg:px-20">
       <div className="mb-12 text-center flex flex-col gap-3">
         <h2 className="text-3xl md:text-4xl font-bold">
-          Our <span className="text-green-500">Work </span>Speaks for Itself!
+          Our <span className="text-[#6BBD00]">Work </span>Speaks for Itself!
         </h2>
         <p
-          className={`${firaCode.className} md:text-xl text-lg text-[#FFFFFF] lg:ml-80 lg:mr-80`}
+          className={`${firaCode.className} md:text-xl text-lg text-gray-700 lg:ml-80 lg:mr-80`}
         >
           Explore our diverse range of projects, each crafted with creativity
           and precision.
@@ -110,7 +110,7 @@ const WorksSection = forwardRef<SliderHandle>((_, ref) => {
         <div className="flex justify-center mt-4 space-x-6">
           {/* Left arrow button */}
           <button
-            className="text-white"
+            className="text-gray-500"
             onClick={() => sliderRef.current?.slickPrev()}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -120,27 +120,25 @@ const WorksSection = forwardRef<SliderHandle>((_, ref) => {
           </p>
           {/* Right arrow button */}
           <button
-            className="text-white"
+            className="text-gray-500"
             onClick={() => sliderRef.current?.slickNext()}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
       </div>
-      <div className="max-w-[38rem] mx-auto md:text-left text-center">
+      <div className="md:w-[60%] mx-auto text-center">
         <p
-          className={`${poppins.className} text-white text-[16px] md:text-xl leading-relaxed mb-4 md:mb-0 inline text-left`}
+          className={`${poppins.className} text-gray-700 text-[16px] md:text-md leading-relaxed mb-4 md:mb-0 inline`}
         >
           We have a vast range of services across our creative and building
           arms. Our goal is to be your all-in-one powerhouse to elevate your
           brand, complete projects seamlessly, and stand out even without an
-          in-house team!
-          <button
-            className={`${poppins.className} bg-[#00A85A] text-white text-lg font-normal py-1 px-3 ml-4 rounded-full hover:bg-[#008c4a] transition duration-300 inline-block align-middle mt-1`}
-          >
-            View More
-            <ArrowUpRight className="inline-block ml-2 align-middle" />
-          </button>
+          in-house team! 
+          <a
+            className={`${poppins.className}  text-gray-500`}
+          >see more
+</a>
         </p>
       </div>
     </section>

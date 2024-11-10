@@ -1,17 +1,16 @@
-import { forwardRef } from 'react';
-import Image from 'next/image';
-import reviews from '@/constants/Reviews';
+import { forwardRef } from 'react'
+import Image from 'next/image'
+import reviews from '@/constants/Reviews'
 
-// Use forwardRef to pass the ref from the parent component
 const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section ref={ref} className="py-12 px-3 md:px-[5%] lg:px-[8%]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          What our <span className="text-green-500">client</span> have to say about us!
+    <section ref={ref} className="py-12 px-4 sm:px-6 md:px-8 lg:px-[10%]">
+      <div className="container mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
+          What our <span className="text-[#6BBD00]">client</span> have to say about us!
         </h2>
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="w-full md:w-[60%] mb-8 md:mb-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="w-full lg:w-[60%]">
             <Image
               src="/Assets/image 4.svg"
               alt="Client Illustration"
@@ -21,23 +20,23 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
               className="mix-blend-multiply w-full"
             />
           </div>
-          <div className="w-full md:w-[40%] bg-gray-200 rounded-[60px] p-6 pb-14">
-            <h3 className="text-3xl font-bold text-green-500 mb-6 ml-4">Reviews</h3>
-            <div className="space-y-4">
+          <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[35%] bg-[#2E1F30] rounded-[40px] p-6 pb-10">
+            <h3 className="text-2xl sm:text-3xl md:text-[3rem] font-bold text-[#6BBD00] mb-4 sm:mb-6 ml-4">Reviews</h3>
+            <div className="space-y-6 sm:space-y-8 pl-4">
               {reviews.map((review, index) => (
-                <div key={index} className="flex items-start space-x-3">
+                <div key={index} className="flex items-start space-x-4 sm:space-x-6">
                   <div className="relative flex-shrink-0">
                     <Image
                       src={review.image}
                       alt={review.name}
                       width={48}
                       height={48}
-                      className="rounded-full mix-blend-multiply"
+                      className="rounded-full"
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[14px] md:text-[16px]">{review.name}</h4>
-                    <p className="text-gray-700 text-[12px] md:text-[14px]">
+                    <h4 className="font-bold text-white text-base sm:text-lg md:text-xl">{review.name}</h4>
+                    <p className="text-white text-xs sm:text-sm md:text-base">
                       {review.comment}
                     </p>
                   </div>
@@ -48,9 +47,9 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       </div>
     </section>
-  );
-});
+  )
+})
 
-ReviewsSection.displayName = 'ReviewsSection'; // Necessary for forwardRef components
+ReviewsSection.displayName = 'ReviewsSection'
 
-export default ReviewsSection;
+export default ReviewsSection
