@@ -22,12 +22,22 @@
     right: 12%;
     font-size: 0.75rem;
   }
+  .small-style {
+    padding-left: 4px;
+    padding-right: 4px;
+
+  }
 }
 
 @media screen and (min-width: 360px) and (max-width: 409px) {
   .hero-bottom-text {
     bottom: 14%;
     right: 15%;
+  }
+  .small-style {
+    padding-left: 4px;
+    padding-right: 4px;
+
   }
 }
 
