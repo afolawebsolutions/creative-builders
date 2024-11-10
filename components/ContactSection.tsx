@@ -1,13 +1,10 @@
-"use client"; // Ensure this is a client component
+"use client";
 
-import { forwardRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { User, Phone, Users } from "lucide-react";
 import Image from "next/image";
-import { CornerDownRight } from "lucide-react";
-import emailjs from "emailjs-com";
-import { Toaster, toast } from "sonner";
 
-const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
-  // Initial state with default values
+export default function Component() {
   const [formData, setFormData] = useState({
     firstname: "",
     surname: "",
@@ -18,179 +15,235 @@ const ContactSection = forwardRef<HTMLDivElement>((props, ref) => {
     aim: "",
   });
 
-  // Retrieve saved form data from localStorage when the component mounts
   useEffect(() => {
     const savedData = localStorage.getItem("contactFormData");
     if (savedData) {
-      setFormData(JSON.parse(savedData)); // Parse the saved JSON and set it to formData
+      setFormData(JSON.parse(savedData));
     }
-  }, []); // This will run only once when the component mounts
+  }, []);
 
-  // Save form data in localStorage whenever a field is changed
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const updatedFormData = { ...formData, [e.target.name]: e.target.value };
     setFormData(updatedFormData);
-    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData)); // Save updated data to localStorage
+    localStorage.setItem("contactFormData", JSON.stringify(updatedFormData));
   };
 
-  // Handle form submission and clear form data from localStorage
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-
-    try {
-      await emailjs.send(
-        serviceID!,
-        templateID!,
-        {
-          firstname: formData.firstname,
-          surname: formData.surname,
-          email: formData.email,
-          phone: formData.phone,
-          organization: formData.organization,
-          description: formData.description,
-          aim: formData.aim,
-        },
-        userID
-      );
-      toast.success("Your message has been sent successfully!");
-
-      setFormData({
-        firstname: "",
-        surname: "",
-        email: "",
-        phone: "",
-        organization: "",
-        description: "",
-        aim: "",
-      });
-      localStorage.removeItem("contactFormData"); 
-    } catch (error) {
-      console.error("Failed to send the message:", error);
-      toast.error("Failed to send the message. Please try again later.");
-    }
+    console.log("Form submitted:", formData);
+    setFormData({
+      firstname: "",
+      surname: "",
+      email: "",
+      phone: "",
+      organization: "",
+      description: "",
+      aim: "",
+    });
+    localStorage.removeItem("contactFormData");
   };
-
   return (
-    <section ref={ref} className="bg-white py-12 px-8 md:px-[5%] lg:px-[8%] flex flex-col md:flex-row">
-      <div className="container mx-auto max-w-6xl">
+    <section className="bg-white py-16 m-4 md:m-10">
+      <div className=" mx-auto px-4 md:px-6 xl:px-0">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Get in touch with our <span className="text-green-500">team</span>
+          Get in touch with our <span className="text-[#6BBD00]">team</span>
         </h2>
-        <p className="text-center text-black mb-12">
+        <p className="text-center text-gray-600 mb-16 text-lg">
           The all-in-one powerhouse team to help you launch & scale faster
         </p>
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
-          <div className="w-full lg:w-1/2 relative">
-            <Image
-              src="/Assets/map.png"
-              alt="Dotted World Map"
-              width={1000}
-              height={1000}
-              className="w-full h-auto"
-              layout="responsive"
-            />
-          </div>
-          <div className="w-full lg:w-1/2 bg-gray-200 rounded-[80px] p-8 md:py-8 md:px-[15%] lg:px-[5%] relative">
-            <h3 className="md:text-2xl text-lg font-semibold mb-6 text-center font-cascadia">
-              Let&apos;s get to know <span className="text-teal-600">you</span>
-            </h3>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="firstname"
-                  placeholder="Firstname"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                  value={formData.firstname}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="surname"
-                  placeholder="Surname"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                  value={formData.surname}
-                  onChange={handleChange}
-                  required
+        <div className="flex flex-col xl:flex-row justify-between items-start relative">
+          <div className="w-full xl:w-[40%] mb-8 xl:mb-0">
+            <div className="relative mb-8">
+              <Image
+                src="/Assets/map.png"
+                alt="World Map"
+                width={600}
+                height={200}
+                className="w-full h-auto"
+              />
+              <div className="absolute top-[90%] left-[90%] transform -translate-x-[5%] -translate-y-[10%]">
+                <Image
+                  src="/Assets/Group 188.svg"
+                  alt="Location Marker"
+                  width={100}
+                  height={80}
+                  className="w-full h-auto"
                 />
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <input
-                type="text"
-                name="organization"
-                placeholder="Name of Organization"
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                value={formData.organization}
-                onChange={handleChange}
-                required
-              />
-              <textarea
-                name="description"
-                placeholder="Tell us more about your organization"
-                rows={4}
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                value={formData.description}
-                onChange={handleChange}
-                required
-              ></textarea>
-              <textarea
-                name="aim"
-                placeholder="What value do you aim to achieve with us?"
-                rows={2}
-                className="w-full p-3 rounded-2xl bg-white border-2 border-teal-600 placeholder-gray-400 focus:outline-none focus:border-teal-700"
-                value={formData.aim}
-                onChange={handleChange}
-                required
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-green-500 text-white font-semibold text-lg py-3 rounded-[20px] hover:bg-green-600 transition duration-300 flex justify-center"
-              >
-                <CornerDownRight />
-                Submit
-              </button>
-            </form>
-            <div className="absolute -bottom-[-200px] md:-bottom-[-80px] lg:-left-[7.6rem] md:-left-[5rem] w-56 h-56 lg:w-48 lg:h-48">
-            <Image
-                src="/Assets/Contact Us 1.png"
-                alt="Person carrying envelope"
-                width={700}
-                height={400}
-                className="w-[100%] max-h-[350px] hidden md:block"
-              />
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg flex flex-col h-72">
+                <div className="h-24 flex items-start">
+                  <User className="w-6 h-6 text-gray-600" />
+                </div>
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold mb-2">Chat to Sales</h3>
+                  <p className="text-gray-600 text-xs flex-1">
+                    Speak with our innovative team
+                  </p>
+                  <button className="w-full py-2 px-4 rounded-sm border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-sm mt-auto">
+                    Sales
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg flex flex-col h-72">
+                <div className="h-24 flex items-start">
+                  <Phone className="w-6 h-6 text-gray-600" />
+                </div>
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold mb-2">Chat to Support</h3>
+                  <p className="text-gray-600 text-xs flex-1">
+                    We&apos;re here to help 24/7
+                  </p>
+                  <button className="w-full py-2 px-4 rounded-sm border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-sm mt-auto">
+                    Support
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg flex flex-col h-72">
+                <div className="h-24 flex items-start">
+                  <Users className="w-6 h-6 text-gray-600" />
+                </div>
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold mb-2">
+                    Join our growing community
+                  </h3>
+                  <p className="text-gray-600 text-xs flex-1">
+                    Impacting 1000+ Creatives
+                  </p>
+                  <button className="w-full py-2 px-4 rounded-sm border border-[#6BBD00] text-[#6BBD00] hover:bg-[#6BBD00] hover:text-white transition-colors duration-300 text-sm mt-auto">
+                    Community
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full xl:w-[35%] bg-white rounded-3xl shadow-lg ">
+            <div className="p-4 md:p-8 lg:px-16 py-8 ">
+              <div className="flex items-center mb-6">
+                <Image
+                  src="/Assets/Avatar 1.svg"
+                  alt="Avatar 1"
+                  width={40}
+                  height={40}
+                  className="rounded-full mr-2"
+                />
+                <Image
+                  src="/Assets/Avatar 2.svg"
+                  alt="Avatar 2"
+                  width={40}
+                  height={40}
+                  className="rounded-full mr-4"
+                />
+                <h3 className="text-gray-700 text-xl font-semibold">
+                  Let&apos;s build the next decade!
+                </h3>
+              </div>
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstname"
+                    placeholder="Firstname"
+                    className="w-full p-5 bg-white border rounded-lg border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    value={formData.firstname}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="surname"
+                    placeholder="Surname"
+                    className="w-full p-5 bg-white border rounded-lg border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    value={formData.surname}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email address"
+                    className="w-full p-5 bg-white border rounded-xl border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="w-full p-5 rounded-xl bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <input
+                  type="text"
+                  name="organization"
+                  placeholder="Name of Organization"
+                  className="w-full p-5 rounded-xl bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                  value={formData.organization}
+                  onChange={handleChange}
+                  required
+                />
+                <textarea
+                  name="description"
+                  placeholder="Tell us more details about your business, and the scope the project in mind."
+                  rows={4}
+                  className="w-full p-10 rounded-xl resize-none bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                  value={formData.description}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+                <input
+                  type="text"
+                  name="aim"
+                  placeholder="What value do you aim to achieve with us?"
+                  className="w-full p-5 rounded-xl bg-white border border-[#6BBD00] placeholder-gray-300 focus:outline-none focus:border-[#6BBD00] text-center text-lg"
+                  value={formData.aim}
+                  onChange={handleChange}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-[#6BBD00] text-white font-semibold text-lg py-4 rounded-xl hover:bg-[#5aa500] transition duration-300 flex justify-center items-center"
+                >
+                  Submit
+                  <svg
+                    className="w-6 h-6 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="absolute left-[59%] top-[65%] transform -translate-x-1/2 -translate-y-1/2 hidden xl:block">
+            <Image
+              src="/Assets/Contact Us 1.png"
+              alt="Person carrying envelope"
+              width={350}
+              height={350}
+            />
           </div>
         </div>
       </div>
-      <Toaster closeButton />
     </section>
   );
-});
-
-ContactSection.displayName = "ContactSection";
-
-export default ContactSection;
+}

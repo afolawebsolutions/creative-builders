@@ -1,59 +1,86 @@
-"use client";
+"use client"
 
-import { Archivo, Fira_Code } from 'next/font/google';
-import Image from 'next/image';
-import { forwardRef } from 'react';
-import { services } from '@/constants/Services'; // Update the path according to your directory structure
+import { useState } from 'react'
+import Image from 'next/image'
+import { forwardRef } from 'react'
+import { ArrowDown, ArrowUp } from 'lucide-react'
+import { services } from '@/constants/Services'
+import { Fira_Code } from 'next/font/google'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '700'],
-});
+})
 
-const archivo = Archivo({
-  subsets: ['latin'],
-  weight: ['700', '900']
-});
-
-// Using forwardRef to accept and forward a ref
 const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
+  const [showAll, setShowAll] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  const visibleServices = showAll ? services : services.slice(0, 4)
+
   return (
     <section
-      id='service'
+      id="service"
       ref={ref}
-      className="bg-white p-8 md:p-16 lg:px-[10%] lg:mb-12"
+      className="bg-white px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16"
     >
-      <h2 className={`${archivo.className} text-3xl md:text-5xl font-extrabold mb-4 text-center text-[#545c58]`}>
+      <h2 className={`${firaCode.className} text-3xl font-semibold mb-2 text-center text-[#FF00A1]`}>
         Our Services
       </h2>
-      <p className={`${firaCode.className} text-center mb-12 text-[#000000] text-xl`}>
-        Your all-in-one powerhouse to launch and scale simple and extensive projects.
+      <p className="text-center mb-8 text-[#000000] text-lg max-w-3xl mx-auto">
+        All the services your business needs in one place to elevate your presence & increase revenue
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
-        {services.map((service, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+        {visibleServices.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center transform transition-transform duration-300 ease-in-out hover:scale-105"
+            className={`flex flex-col items-center  py-10  px-[1.5rem] ${
+              hoveredIndex === index ? 'bg-[#6BBD00]' : 'bg-[#B5DE80]'
+            } transition-all duration-300 ${hoveredIndex === index ? 'scale-105' : 'scale-100'}`}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="w-full aspect-square relative mb-4">
+            <h3
+              className={` ${firaCode.className} text-2xl font-semibold mb-6  text-start ${
+                hoveredIndex === index ? 'text-black' : 'text-black'
+              }`}
+            >
+              {service.title}
+            </h3>
+            <p
+              className={`text-sm  text-start mb-6 mx-9 ${
+                hoveredIndex === index ? 'text-black' : 'text-black'
+              }`}
+            >
+              {service.description}
+            </p>
+            <div className="mt-auto w-[90%] mx-4">
               <Image
                 src={service.image}
                 alt={service.title}
-                fill
-                className="object-cover rounded-[40px]"
+                width={300}
+                height={200}
+                className="w-full h-auto object-cover"
               />
             </div>
-            <h3 className={`font-semibold text-center hover:underline text-[18px] ${service.color}`}>
-              {service.title}
-            </h3>
           </div>
         ))}
       </div>
+      {services.length > 4 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="flex items-center justify-center w-14 h-14 rounded-full border-[5px] border-[#2E1F30] text-[#2E1F30]"
+            aria-label={showAll ? "Show less services" : "Show more services"}
+          >
+            {showAll ? <ArrowUp className="w-10 h-10 text-[#2E1F30]" /> : <ArrowDown className="w-10 h-10  " />}
+          </button>
+        </div>
+      )}
     </section>
-  );
-});
+  )
+})
 
-// Setting a display name for better debugging
-ServicesSection.displayName = 'ServicesSection';
+ServicesSection.displayName = 'ServicesSection'
 
-export default ServicesSection;
+export default ServicesSection

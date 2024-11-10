@@ -7,23 +7,94 @@
     width: 160px; /* Default width for mobile screens */
   }
   
-  /* Width for tablet screens */
-  @media (min-width: 768px) {
-    .dynamic-logo {
-      width: 120px; /* Width for medium screens (tablet view) */
-    }
-    .md-lg-dynamic-padding {
-      padding: var(--md-lg-padding, 18px);
-    }
+  /* Base styles */
+.hero-bottom-text {
+  position: absolute;
+  bottom: 18%;
+  right: 15%;
+  width: 100%;
+}
+
+@media screen and (min-width: 410px) {
+  .hero-bottom-text {
+    bottom: 13%;
+    right: 18%;
+    align-items: center;
   }
-  
-  /* Width for larger screens */
-  @media (min-width: 1024px) {
-    .dynamic-logo {
-      width: var(--logo-width, 120px); /* Dynamic width for large screens */
-    }
-    .md-lg-dynamic-padding {
-      padding: var(--md-lg-padding, 18px);
-    }
+ 
+}
+
+
+/* Media queries for various screen sizes */
+@media screen and (min-width: 480px) {
+  .hero-bottom-text {
+    bottom: 10%;
+    right: 22%;
+    align-items: center;
   }
-  
+ 
+}
+
+@media screen and (min-width: 640px) {
+  .hero-bottom-text {
+    bottom: 7%;
+    right: 22%;
+    align-items: center;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .hero-bottom-text {
+    bottom: 9%;
+    right: 22%;
+  }
+  .dynamic-logo {
+    width: 120px; /* Width for medium screens (tablet view) */
+  }
+  .md-lg-dynamic-padding {
+    padding: var(--md-lg-padding, 18px);
+  }
+ 
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-bottom-text {
+    bottom: 22%;
+    right: 5%;
+    width: auto;
+  }
+  .dynamic-logo {
+    width: var(--logo-width, 120px); /* Dynamic width for large screens */
+  }
+  .md-lg-dynamic-padding {
+    padding: var(--md-lg-padding, 18px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-bottom-text {
+    bottom: 20%;
+    right: 7%;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .hero-bottom-text {
+    bottom: 14%;
+    right: 7%;
+  }
+}
+
+/* Adjustments for hero section bottom margin */
+@media screen and (max-width: 767px) {
+  .hero-section {
+    margin-bottom: 0rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+}
