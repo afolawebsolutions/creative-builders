@@ -22,7 +22,7 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="service"
       ref={ref}
-      className="bg-white px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16"
+      className="bg-white px-4 py-8  md:py-12 md:px-[5%] lg:py-16"
     >
       <h2 className={`${firaCode.className} text-3xl font-semibold mb-2 text-center text-[#FF00A1]`}>
         Our Services

@@ -35,10 +35,10 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       ref={ref}
-      className="bg-[#2E1F30] text-white min-h-screen w-full relative overflow-hidden"
+      className="bg-[#2E1F30] text-white md:pl-[5%]  px-4 pt-16 md:py-14 lg:py-24 overflow-hidden"
     >
-      <div className="max-w-[1600px] mx-auto min-h-screen flex flex-col lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full lg:w-1/2 xl:w-[55%] space-y-8 py-12 lg:py-0">
+      <div className=" mx-auto flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8">
+        <div className="w-full md:w-1/2 xl:w-[55%] space-y-8 pt-12 md:pt-6">
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
               <div className="flex items-baseline gap-4">
@@ -59,12 +59,12 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           <p className="text-lg text-gray-200 max-w-[600px] leading-relaxed">
             Experience exponential growth in your business through creative & software solutions tailored to your business needs.
           </p>
-          <form onSubmit={handleSubmit} className="w-full max-w-[600px]">
+          <form onSubmit={handleSubmit} className="w-full min-w-[330px] max-w-[500px]">
             <div className="flex items-center bg-[#D8D8D8] rounded-[2rem] p-2">
               <input
                 type="text"
                 placeholder="Tell us about your project"
-                className="flex-1 px-6 py-3 bg-transparent text-[#636262] placeholder-[#636262] focus:outline-none text-sm rounded-full"
+                className="flex-1 md:px-6  py-3 bg-transparent text-[#636262] placeholder-[#636262] focus:outline-none text-sm rounded-full"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -79,8 +79,8 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
           </form>
         </div>
-        <div className="relative w-full lg:w-1/2 xl:w-[45%] h-[50vh] lg:h-screen flex justify-end items-center">
-          <div className="relative w-full h-full max-w-[800px] max-h-[800px]">
+     
+          <div className="relative w-full h-full max-w-[800px] max-h-[800px] min-w-[360px] min-h-[350px] md:min-h-[600px] md:min-w-[500px] md:pt-9">
             <Image
               src="/Assets/Frame.svg"
               alt="Quarterly revenue chart and person with IDEA sign"
@@ -88,7 +88,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
               className="object-contain"
               priority
             />
-          </div>
+          
         </div>
       </div>
       <Toaster closeButton />

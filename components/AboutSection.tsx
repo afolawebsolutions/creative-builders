@@ -28,7 +28,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
     <section
       id='aboutme'
       ref={ref}
-      className="mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center justify-center md:px-[5%]"
+      className="mx-auto px-4  py-12 sm:py-16 md:py-18 lg:py-24 flex flex-col md:flex-row items-center justify-center md:px-[5%]"
     >
       <div className="w-full md:w-[50%] mb-8 md:mb-0">
         <Image 
@@ -39,7 +39,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
           className="w-full h-auto max-h-[800px] object-cover rounded-xl"
         />
       </div>
-      <div className="w-full md:w-1/2 md:pl-8 lg:pl-[4rem] md:pr-4 lg:pr-[12rem]">
+      <div className="w-full md:w-1/2 md:pl-8 lg:pl-[4rem] md:pr-4 lg:pr-[8rem]">
         <h2 className={`${firaCode.className} text-[#FF00A1] mb-4 text-sm sm:text-base`}>
           About Us
         </h2>
