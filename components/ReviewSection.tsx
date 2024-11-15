@@ -4,12 +4,12 @@ import reviews from '@/constants/Reviews'
 
 const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section ref={ref} className="py-12 px-4 sm:px-6 md:px-8 lg:px-[10%]">
+    <section ref={ref} className="py-12 px-4 sm:px-6 md:px-8 lg:px-[5%]">
       <div className="container mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
           What our <span className="text-[#6BBD00]">client</span> have to say about us!
         </h2>
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
           <div className="w-full lg:w-[60%]">
             <Image
               src="/Assets/image 4.svg"
