@@ -59,7 +59,7 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           <p className="text-lg text-gray-200 max-w-[600px] leading-relaxed">
             Experience exponential growth in your business through creative & software solutions tailored to your business needs.
           </p>
-          <form onSubmit={handleSubmit} className="w-full min-w-[330px] max-w-fit">
+          <form onSubmit={handleSubmit} className="w-full min-w-[330px] max-w-[500px]">
             <div className="flex items-center bg-[#D8D8D8] rounded-[2rem] p-2">
               <input
                 type="text"
