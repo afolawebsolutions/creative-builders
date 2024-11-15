@@ -20,7 +20,7 @@ const ReviewsSection = forwardRef<HTMLDivElement>((props, ref) => {
               className="mix-blend-multiply w-full"
             />
           </div>
-          <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[35%] bg-[#2E1F30] rounded-[40px] p-6 pb-10">
+          <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[40%] bg-[#2E1F30] rounded-[40px] p-6 pb-10">
             <h3 className="text-2xl sm:text-3xl md:text-[3rem] font-bold text-[#6BBD00] mb-4 sm:mb-6 ml-4">Reviews</h3>
             <div className="space-y-6 sm:space-y-8 pl-4">
               {reviews.map((review, index) => (
