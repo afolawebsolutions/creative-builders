@@ -59,19 +59,19 @@ const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
           <p className="text-lg text-gray-200 max-w-[600px] leading-relaxed">
             Experience exponential growth in your business through creative & software solutions tailored to your business needs.
           </p>
-          <form onSubmit={handleSubmit} className="w-full min-w-[330px] max-w-[500px]">
+          <form onSubmit={handleSubmit} className="w-full min-w-[330px] max-w-fit">
             <div className="flex items-center bg-[#D8D8D8] rounded-[2rem] p-2">
               <input
                 type="text"
                 placeholder="Tell us about your project"
-                className="flex-1 md:px-6  py-3 bg-transparent text-[#636262] placeholder-[#636262] focus:outline-none text-sm rounded-full"
+                className="flex-1 lg:px-6 px-2 py-3 bg-transparent text-[#636262] placeholder-[#636262] focus:outline-none text-sm rounded-full"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <button
                 type="submit"
-                className="bg-[#4A2D4E] hover:bg-[#5d395f] text-white px-4 sm:px-6 py-3 rounded-[1rem] text-sm font-medium whitespace-nowrap flex items-center gap-2 transition-colors"
+                className="bg-[#4A2D4E] hover:bg-[#5d395f] text-white px-2 sm:px-1 py-3 rounded-[1rem] text-sm font-medium whitespace-nowrap flex items-center gap-2 transition-colors"
               >
                 Begin a project
                 <span className="inline-flex items-center justify-center w-6 h-6 bg-[#332434] rounded-full">→</span>
