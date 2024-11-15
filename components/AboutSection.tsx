@@ -39,7 +39,7 @@ const AboutSection = forwardRef<HTMLDivElement, AboutProps>(({ section3Ref }, re
           className="w-full h-auto max-h-[800px] object-cover rounded-xl"
         />
       </div>
-      <div className="w-full md:w-1/2 md:pl-8 lg:pl-[4rem] md:pr-4 lg:pr-[8rem]">
+      <div className="w-full md:w-1/2 md:pl-8 lg:pl-[4rem] md:pr-4 ">
         <h2 className={`${firaCode.className} text-[#FF00A1] mb-4 text-sm sm:text-base`}>
           About Us
         </h2>
