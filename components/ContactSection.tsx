@@ -53,7 +53,7 @@ export default function Component() {
         <p className="text-center text-gray-600 mb-16 text-lg">
           The all-in-one powerhouse team to help you launch & scale faster
         </p>
-        <div className="flex flex-col xl:flex-row justify-between items-start relative">
+        <div className="flex flex-col xl:flex-row justify-between relative">
           <div className="w-full xl:w-[40%] mb-8 xl:mb-0">
             <div className="relative mb-8">
               <Image
@@ -124,7 +124,7 @@ export default function Component() {
           </div>
           <div className="w-full xl:w-[35%] bg-white rounded-3xl shadow-lg ">
             <div className="p-4 md:p-8 lg:px-16 py-8 ">
-              <div className="flex items-center mb-6">
+              <div className="flex items-center mb-[11%]">
                 <Image
                   src="/Assets/Avatar 1.svg"
                   alt="Avatar 1"
@@ -234,7 +234,7 @@ export default function Component() {
               </form>
             </div>
           </div>
-          <div className="absolute left-[59%] top-[65%] transform -translate-x-1/2 -translate-y-1/2 hidden xl:block">
+          <div className="absolute left-[59%] top-[65%] transform -translate-x-[48%] positioning  -translate-y-1/2 hidden xl:block">
             <Image
               src="/Assets/Contact Us 1.png"
               alt="Person carrying envelope"

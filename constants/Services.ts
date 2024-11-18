@@ -5,7 +5,7 @@ export const services = [
     image: '/Assets/image 7.svg',
   },
   {
-    title: 'Web Design & Development',
+    title: 'Web Development',
     description: 'Own a website that converts visitors to a customer tribe. Showcase your product offerings, tease your audience, and keep in touch consistently.',
     image: '/Assets/image.svg',
   },

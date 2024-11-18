@@ -23,8 +23,8 @@
     font-size: 0.75rem;
   }
   .small-style {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
 
   }
 }
@@ -35,17 +35,22 @@
     right: 15%;
   }
   .small-style {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
 
   }
 }
 
-@media screen and (min-width: 410px) {
+@media screen and (min-width: 410px) and (max-width: 430px) {
   .hero-bottom-text {
     bottom: 13%;
     right: 18%;
     align-items: center;
+  }
+  .small-style {
+    padding-left: 0px;
+    padding-right: 0px;
+
   }
 }
 
@@ -63,6 +68,11 @@
     right: 22%;
     align-items: center;
   }
+  .small-style {
+    padding-left: 4px;
+    padding-right: 4px;
+
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -75,6 +85,11 @@
   }
   .md-lg-dynamic-padding {
     padding: var(--md-lg-padding, 18px);
+  }
+  .small-style {
+    padding-left: 4px;
+    padding-right: 4px;
+
   }
 }
 
@@ -103,6 +118,14 @@
   .hero-bottom-text {
     bottom: 14%;
     right: 7%;
+  }
+}
+
+
+@media screen and (min-width: 2000px) {
+  .positioning {
+    --tw-translate-x: -36%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
 
