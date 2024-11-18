@@ -53,7 +53,7 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ contactSectionRef }, r
           </div>
 
           <div className="flex flex-row gap-8 flex-wrap md:justify-around w-full">
-            {['About Us', 'Services', 'Partner', 'Careers', 'Legal'].map((category) => (
+            {['About Us', 'Legal', 'Careers', 'Services', 'Partners'].map((category) => (
               <div key={category}>
                 <h3 className="text-[#FF00A1] font-medium text-[22px] my-5">{category}</h3>
                 <ul className="md:space-y-7 space-y-4 font-[12] text-[12px] text-gray-200">
@@ -99,10 +99,12 @@ Footer.displayName = 'Footer'
 function getLinksForCategory(category: string) {
   const links = {
     'About Us': ['Contact Us', 'Work with us', 'Portfolio', 'Blog', 'FAQs', 'Get Started'],
-    'Services': ['Graphics Design', 'UI/UX Design', 'Video Production', 'Visual Identity', 'Web Development', 'App Development'],
-    'Partner': ['Partner with us', 'Sponsors', 'Got an idea?', 'About Us'],
+    'Legal': ['Terms', 'Privacy', 'Cookies', 'Licenses'],
     'Careers': ['Join the team', 'Freelance', 'About Us'],
-    'Legal': ['Terms', 'Privacy', 'Cookies', 'Licenses']
+    'Services': ['Graphics Design', 'UI/UX Design', 'Video Production', 'Visual Identity', 'Web Development', 'App Development'],
+    'Partners': ['Partner with us', 'Sponsors', 'Got an idea?', 'About Us'],
+
+    
   }
   return links[category as keyof typeof links] || []
 }

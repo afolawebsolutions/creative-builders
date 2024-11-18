@@ -13,7 +13,7 @@ export default function Header() {
         <Image
           src="/Assets/Asset 9 1.svg"
           alt="Logo"
-          width={120}
+          width={100}
           height={40}
           className="dynamic-logo dynamic-logo-lg"
         />

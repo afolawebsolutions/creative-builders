@@ -85,7 +85,7 @@ export default function PortfolioSection() {
     : projects.filter(project => project.category === activeCategory)
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-16 md:py-16 ">
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4 text-[#2D2D2D]">Our Portfolio</h1>
       <p className="text-center mb-12 text-[#666666] text-lg">
         See through our screens! Get <span className="text-[#7209B7] font-semibold">Inspired</span>, Get{' '}
